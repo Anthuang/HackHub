@@ -103,6 +103,12 @@ window.onload = function() {
 	  // console.log(snapshot.val());
 	});
 
+	function remove_post(key) {
+		var firebase_ref = firebase.database().ref().child("Posts").child(key);
+		firebase_ref.remove();
+		// how to remove the html depends on whether we want it to refresh or not
+	}
+
 	// Triggers when a post is added
 	// Receive a snap which is one post
 	firebase_ref.child("Posts").on('child_added', snap => {
