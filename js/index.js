@@ -2,12 +2,25 @@ window.onload = function() {
 	/*
 	 * Switching tabs
 	 */
+	var logout = document.getElementById("logout");
+	logout.addEventListener('click', e => {
+		firebase.auth().signOut();
+	});  
 
+	var curr_user;
+	firebase.auth().onAuthStateChanged(user => {
+		if(user){
+			curr_user = firebase.auth().currentUser;
+		} else {
+			window.location.replace("not_logged_in.html")
+		}
+	});
+	console.log(curr_user);
 	var arr = document.getElementsByClassName("nav_el");
 	var names = ["post", "announcement", "meeting", "user"];
 	var last_active = 0;
 
-	for (var i = 0; i < arr.length; i++) {
+	for (var i = arr.length-1; i >=0; --i) {
 		arr[i].onclick = function() {
 			arr[last_active].classList.remove("nav_active");
 			document.getElementById(names[last_active]).style.display = "none";
@@ -48,6 +61,8 @@ window.onload = function() {
 	    title: add_title,
 	    text: add_text,
 	    select: add_select,
+		user: curr_user.uid,
+		comments: "",
 	  });
 	}
 
@@ -71,7 +86,8 @@ window.onload = function() {
 		if (select != "post") {
 			var new_msg = document.createElement("li");
 			new_msg.innerHTML = "<h1>" + title + "</h1>\n<h3>" + text + "</h3>";
-			document.getElementById("post").appendChild(new_msg);
+			document.getElementById("post").insertBefore(new_msg,
+			 document.getElementById("post").firstChild);
 		}
 		var new_msg = document.createElement("li");
 		new_msg.innerHTML = "<h1>" + title + "</h1>\n<h3>" + text + "</h3>";

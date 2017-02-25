@@ -1,5 +1,5 @@
 var login = document.getElementById("login");
-var logout = document.getElementById("logout");
+var signup = document.getElementById("signup");
 
 login.addEventListener('click', e =>{
     var email = document.getElementById("email").value;
@@ -13,7 +13,9 @@ login.addEventListener('click', e =>{
     document.getElementById("password").value = "";
 });
 
-login.addEventListener('click', e => {
+signup.addEventListener('click', e => {
+    var email = document.getElementById("email").value;
+    var password = document.getElementById("password").value;
     firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
         // Handle Errors here.
         var errorCode = error.code;
