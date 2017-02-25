@@ -1,4 +1,8 @@
 window.onload = function() {
+	function clearField(input) {
+    input.value = "";
+	};
+
 	/*
 	 * Switching tabs
 	 */
@@ -49,6 +53,13 @@ window.onload = function() {
 	    text: add_text,
 	    select: add_select,
 	  });
+
+	  // Clear
+		add_wrap.style.display = "none";
+		outer_wrap.style.webkitFilter = "";
+		clearField(document.getElementById("add_title"));
+		clearField(document.getElementById("add_text"));
+		clearField(document.getElementById("add_tags"));
 	}
 
 	/*
