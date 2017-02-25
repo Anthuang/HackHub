@@ -197,12 +197,26 @@ nav > div:hover {
   height: 100%;
   left: 100%;
   position: fixed;
-  padding: 30px;
   color: #e9e9e9;
   transition: all 0.3s ease-out 0s;
 }
 
-/* line 217, ../sass/_main.scss */
+/* line 216, ../sass/_main.scss */
+#msg_info_wrap {
+  padding: 30px;
+}
+
+/* line 220, ../sass/_main.scss */
+#comment li {
+  height: 100px;
+  padding: 20px;
+  border-top: 1px solid #e9e9e9;
+  position: relative;
+  font-family: "Raleway", sans-serif;
+  color: #e9e9e9;
+}
+
+/* line 231, ../sass/_main.scss */
 #msg_info_return {
   display: none;
 }
