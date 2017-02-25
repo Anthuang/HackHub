@@ -134,6 +134,7 @@ window.onload = function() {
 			document.getElementById("msg_info").style.left = "0";
 		}
 		new_msg.innerHTML = "<h1>" + title + "</h1>\n<h3>" + text + "</h3>";
-		document.getElementById(select).appendChild(new_msg);
+		document.getElementById(select).insertBefore(new_msg,
+			 document.getElementById(select).firstChild);
 	});
 }
