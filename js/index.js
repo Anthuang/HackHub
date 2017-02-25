@@ -47,4 +47,15 @@ window.onload = function() {
 	    select: add_select,
 	  });
 	}
+
+	firebase_ref.child("Posts").on('value', function(snapshot) {
+	  console.log(snapshot.val());
+	});
+
+	firebase_ref.child("Posts").on('child_added', snap => {
+		var add_title = snap.child("title").val();
+		var add_text = snap.child("text").val();
+		console.log(add_title);
+		console.log(add_text);
+	});
 }
