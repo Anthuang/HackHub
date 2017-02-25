@@ -32,17 +32,19 @@ window.onload = function() {
 		outer_wrap.style.webkitFilter = "";
 	}
 
-	//
+	/*
+	 * Sending stuff to Firebase
+	 */
 	var firebase_ref = firebase.database().ref();
 	var submit = document.getElementById("add_submit");
 	submit.onclick = function() {
 		var add_title = document.getElementById("add_title").value;
 		var add_text = document.getElementById("add_text").value;
-		// firebase_ref.child("Posts").push().set(add_text);
+		var add_select = document.getElementById("add_select").value;
 		firebase_ref.child("Posts").push().set({
 	    title: add_title,
 	    text: add_text,
+	    select: add_select,
 	  });
-		// alert("done");
 	}
 }

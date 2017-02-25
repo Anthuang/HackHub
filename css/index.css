@@ -3,14 +3,13 @@
   right: 30px;
   bottom: 30px;
   position: fixed;
-  font-size: 50px;
+  font-size: 64px;
   cursor: pointer;
   color: #fff;
 }
 
 /* line 23, ../sass/_main.scss */
 #add_wrap {
-  display: none;
   height: 100%;
   width: 100%;
   position: fixed;
@@ -20,16 +19,38 @@
 
 /* line 33, ../sass/_main.scss */
 #add_wrap > div {
-  position: relative;
   height: 80%;
   width: 80%;
   top: 50%;
   transform: translateY(-50%);
+  position: relative;
   margin: auto;
+  padding: 15px;
   background: #fff;
 }
 
-/* line 43, ../sass/_main.scss */
+/* line 49, ../sass/_main.scss */
+#add_submit {
+  width: 100%;
+  height: 100px;
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  font-size: 24px;
+  cursor: pointer;
+  border: none;
+  border-top: 1px solid #ff3b3f;
+  background: #fff;
+}
+
+/* line 64, ../sass/_main.scss */
+#add_submit:hover {
+  border: 1px solid #fff;
+  color: #fff;
+  background: #ff3b3f;
+}
+
+/* line 70, ../sass/_main.scss */
 #add_exit {
   position: absolute;
   top: 10px;
@@ -39,7 +60,7 @@
   color: #ff3b3f;
 }
 
-/* line 55, ../sass/_main.scss */
+/* line 82, ../sass/_main.scss */
 nav {
   height: 50px;
   width: 100%;
@@ -48,7 +69,7 @@ nav {
   font-family: "Open Sans", sans-serif;
 }
 
-/* line 64, ../sass/_main.scss */
+/* line 91, ../sass/_main.scss */
 nav > div {
   height: 100%;
   display: table-cell;
@@ -59,25 +80,25 @@ nav > div {
   background: #fff;
 }
 
-/* line 76, ../sass/_main.scss */
+/* line 103, ../sass/_main.scss */
 nav > div:hover {
   color: #fff;
   background: #ff3b3f;
 }
 
-/* line 81, ../sass/_main.scss */
+/* line 108, ../sass/_main.scss */
 .nav_active {
   color: #fff;
   background: #ff3b3f;
 }
 
-/* line 87, ../sass/_main.scss */
+/* line 114, ../sass/_main.scss */
 #main {
   width: 100%;
   background: #ff3b3f;
 }
 
-/* line 93, ../sass/_main.scss */
+/* line 120, ../sass/_main.scss */
 #main ul li {
   height: 100px;
   padding: 20px;
@@ -85,7 +106,7 @@ nav > div:hover {
   color: #fff;
 }
 
-/* line 102, ../sass/_main.scss */
+/* line 129, ../sass/_main.scss */
 #announcements, #meetings, #users {
   display: none;
 }
@@ -109,4 +130,10 @@ ul {
 /* line 19, ../sass/index.scss */
 h1, h2, h3, h4, h5, h6 {
   margin: 0;
+}
+
+/* line 23, ../sass/index.scss */
+input, textarea, select {
+  margin: 0;
+  padding: 0;
 }

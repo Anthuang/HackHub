@@ -14,14 +14,14 @@
 	bottom: 30px;
 	position: fixed;
 
-	font-size: 50px;
+	font-size: $font1 * 2;
 	cursor: pointer;
 
 	color: #fff;
 }
 
 #add_wrap {
-	display: none;
+	// display: none;
 	height: 100%;
 	width: 100%;
 	position: fixed;
@@ -31,13 +31,40 @@
 }
 
 #add_wrap > div {
-	position: relative;
 	height: 80%;
 	width: 80%;
 	top: 50%;
   transform: translateY(-50%);
+	position: relative;
 	margin: auto;
+	padding: 15px;
+
 	background: #fff;
+}
+
+#add_wrap input {
+
+}
+
+#add_submit {
+	width: 100%;
+	height: $msg_height;
+	bottom: 0;
+	left: 0;
+	position: absolute;
+
+	font-size: $font2;
+	cursor: pointer;
+
+	border: none;
+	border-top: 1px solid $main;
+	background: $main_accent;
+}
+
+#add_submit:hover {
+	border: 1px solid $main_accent;
+	color: $main_accent;
+	background: $main;
 }
 
 #add_exit {
