@@ -164,6 +164,5 @@ window.onload = function() {
 		document.getElementById("add").style.display = "block";
 		document.getElementById("outer_wrap").style.right = "0";
 		document.getElementById("msg_info").style.left = "100%";
-		document.getElementById("remove_post").style.left = "100%";
 	}
 }
