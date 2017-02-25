@@ -22,6 +22,21 @@ select {
 	color: #000;
 }
 
+::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color: $main_hover;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+   color: $main_hover;
+   opacity: 1;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+   color: $main_hover;
+   opacity: 1;
+}
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+   color: $main_hover;
+}
+
 .circle_button {
 	right: $add_offset;
 	bottom: $add_offset;
@@ -221,6 +236,12 @@ nav > div:hover {
 	display: none;
 }
 
+#comment {
+	margin-bottom: $comment_spacing;
+
+	border-bottom: 1px solid $main_accent;
+}
+
 #comment li {
 	height: $msg_height;
 	padding: $msg_padding;
@@ -232,25 +253,47 @@ nav > div:hover {
 	color: $main_accent;
 }
 
+#msg_info label {
+	color: $main_accent;
+	font-size: $font2;
+	font-family: $side_font;
+}
+
 #comment_text {
 	display: block;
 	width: 90%;
-	height: $nav_height;
+	height: $msg_height;
 	padding: $add_input_padding;
-	margin-bottom: $msg_padding;
+	margin: auto;
 
-	font-size: $font2;
+	font-size: $font3;
 
 	color: $main_accent;
 	border: 3px solid $main_accent;
 	border-radius: 1px;
 	outline: none;
 	background: none;
+	resize: none;
 }
 
-#comment_text {
-	height: $msg_height;
-	resize: none;
+#comment_submit {
+	width: 80%;
+	height: $add_submit_height;
+	margin: auto;
+	margin-top: $comment_spacing;
+	display: block;
 
-	font-size: $font3;
+	font-size: $font2;
+	cursor: pointer;
+
+	border: 3px solid $main_accent;
+	color: $main_accent;
+	background: $main;
+}
+
+#comment_submit:hover {
+	border: none;
+	border-top: 1px solid $main;
+	color: $main;
+	background: $main_accent;
 }
