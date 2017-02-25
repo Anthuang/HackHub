@@ -9,7 +9,7 @@ window.onload = function() {
 	var logout = document.getElementById("logout");
 	logout.addEventListener('click', e => {
 		firebase.auth().signOut();
-	});  
+	});
 
 	var curr_user;
 	firebase.auth().onAuthStateChanged(user => {
@@ -109,7 +109,7 @@ window.onload = function() {
 		var title = snap.child("title").val();
 		var text = snap.child("text").val();
 		var select = snap.child("select").val();
-		
+
 		if (select != "post") {
 			var new_msg = document.createElement("li");
 			new_msg.onclick = function() {
@@ -120,7 +120,7 @@ window.onload = function() {
 				document.getElementById("outer_wrap").style.right = "100%";
 				document.getElementById("msg_info").style.left = "0";
 			}
-			new_msg.innerHTML = "<h1>" + title + "</h1>\n<h3>" + text + "</h3>";
+			new_msg.innerHTML = "<h1>" + title + "</h1>\n<h3>" + text + "</h3><button value='" + snap.key + "' class='remove_post'>Remove</button>";
 			document.getElementById("post").insertBefore(new_msg,
 			 document.getElementById("post").firstChild);
 		}
@@ -133,7 +133,7 @@ window.onload = function() {
 			document.getElementById("outer_wrap").style.right = "100%";
 			document.getElementById("msg_info").style.left = "0";
 		}
-		new_msg.innerHTML = "<h1>" + title + "</h1>\n<h3>" + text + "</h3>";
+		new_msg.innerHTML = "<h1>" + title + "</h1>\n<h3>" + text + "</h3><button value='" + snap.key + "' class='remove_post'>Remove</button>";
 		document.getElementById(select).insertBefore(new_msg,
 			 document.getElementById(select).firstChild);
 	});
