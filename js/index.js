@@ -1,21 +1,49 @@
+function clearField(input) {
+  input.value = "";
+};
+
+function remove_post(key) {
+	var firebase_ref = firebase.database().ref().child("Posts").child(key);
+	firebase_ref.remove();
+	// how to remove the html depends on whether we want it to refresh or not
+	window.location.replace("index.html");
+};
+
 window.onload = function() {
-	function clearField(input) {
-    input.value = "";
-	};
+
+	var data = [{ id: 0, text: 'Web' }, { id: 1, text: 'iOS' }, { id: 2, text: 'Android' }, { id: 3, text: 'Hardware' }, { id: 4, text: 'Others' }];
+	$("#selectBox").select2({
+		width: '100%',
+		data: data,
+		placeholder: "Tags",
+		allowclear: true,
+	});
 
 	/*
 	 * Switching tabs
 	 */
+<<<<<<< HEAD
 
 	var curr_user;
 	firebase.auth().onAuthStateChanged(user => {
 		if(user){
 			curr_user = user;
+=======
+	var logout = document.getElementById("logout");
+	logout.addEventListener('click', e => {
+		firebase.auth().signOut();
+	});
+
+	var curr_user;
+	firebase.auth().onAuthStateChanged(user => {
+		if (user) {
+			curr_user = firebase.auth().currentUser;
+>>>>>>> 4a65671e089faef8d20f2913c9209e71cb291c21
 		} else {
-			window.location.replace("not_logged_in.html")
+			window.location.replace("not_logged_in.html");
 		}
 	});
-	console.log(curr_user);
+	// console.log(curr_user);
 	var arr = document.getElementsByClassName("nav_el");
 	var names = ["post", "announcement", "meeting", "user"];
 	var last_active = 0;
@@ -48,16 +76,6 @@ window.onload = function() {
 	}
 
 	/*
-	 * Shifting return
-	 */
-	document.getElementById("msg_info_return").onclick = function() {
-		this.style.display = "none";
-		document.getElementById("add").style.display = "block";
-		document.getElementById("outer_wrap").style.right = "0";
-		document.getElementById("msg_info").style.left = "100%";
-	}
-
-	/*
 	 *
 	 * Database stuff
 	 *
@@ -73,11 +91,22 @@ window.onload = function() {
 		var add_title = document.getElementById("add_title").value;
 		var add_text = document.getElementById("add_text").value;
 		var add_select = document.getElementById("add_select").value;
+		var add_tags = $("#selectBox").val();
 		firebase_ref.child("Posts").push().set({
+<<<<<<< HEAD
 			title: add_title,
 			text: add_text,
 			select: add_select
 		});
+=======
+	    title: add_title,
+	    text: add_text,
+	    select: add_select,
+			tags: add_tags,
+			user: curr_user.uid,
+			comments: "",
+	  });
+>>>>>>> 4a65671e089faef8d20f2913c9209e71cb291c21
 
 	  // Clear
 		add_wrap.style.display = "none";
@@ -103,37 +132,58 @@ window.onload = function() {
 		var title = snap.child("title").val();
 		var text = snap.child("text").val();
 		var select = snap.child("select").val();
-		
+		var tags = snap.child("tags").val();
+		var tags_string = "";
+		for (var i = 0; i < snap.child("tags").numChildren() - 1; i++) {
+			tags_string += data[snap.child("tags").child(i).val()]['text'] + ", ";
+		}
+		if (snap.child("tags").numChildren() > 0) {
+			tags_string += data[snap.child("tags").child(snap.child("tags").numChildren() - 1).val()]['text'];
+		}
+
 		if (select != "post") {
 			var new_msg = document.createElement("li");
-			new_msg.onclick = function() {
+			new_msg.addEventListener('click', function(e) {
+				window.scrollTo(0, 0);
 				document.getElementById("msg_info_title").innerHTML = title;
 				document.getElementById("msg_info_text").innerHTML = text;
 				document.getElementById("msg_info_return").style.display = "block";
 				document.getElementById("add").style.display = "none";
 				document.getElementById("outer_wrap").style.right = "100%";
 				document.getElementById("msg_info").style.left = "0";
-			}
-			new_msg.innerHTML = "<h1>" + title + "</h1>\n<h3>" + text + "</h3>";
-			document.getElementById("post").insertBefore(new_msg,
-			 document.getElementById("post").firstChild);
+			}, false);
+			new_msg.innerHTML = "<h1>" + title + "</h1>\n<h3>" + text + "</h3>\n<h4>Tags: " + tags_string + "</h4><button onclick='remove_post(\"" + snap.key + "\")' value='" + snap.key + "' class='remove_post'><i class='fa fa-times' aria-hidden='true'></i></button>";
+			document.getElementById(select).insertBefore(new_msg, document.getElementById(select).firstChild);
 		}
 		var new_msg = document.createElement("li");
-		new_msg.onclick = function() {
+		new_msg.addEventListener('click', function(e) {
+			window.scrollTo(0, 0);
 			document.getElementById("msg_info_title").innerHTML = title;
 			document.getElementById("msg_info_text").innerHTML = text;
 			document.getElementById("msg_info_return").style.display = "block";
 			document.getElementById("add").style.display = "none";
 			document.getElementById("outer_wrap").style.right = "100%";
 			document.getElementById("msg_info").style.left = "0";
-		}
-		new_msg.innerHTML = "<h1>" + title + "</h1>\n<h3>" + text + "</h3>";
-		document.getElementById(select).insertBefore(new_msg,
-			 document.getElementById(select).firstChild);
+		}, false);
+		new_msg.innerHTML = "<h1>" + title + "</h1>\n<h3>" + text + "</h3>\n<h4>Tags: " + tags_string + "<button onclick='remove_post(\"" + snap.key + "\")' value='" + snap.key + "' class='remove_post'><i class='fa fa-times' aria-hidden='true'></i></button>";
+		document.getElementById("post").insertBefore(new_msg, document.getElementById("post").firstChild);
 	});
 
+<<<<<<< HEAD
 	var logout = document.getElementById("logout");
 	logout.addEventListener('click', e => {
 		firebase.auth().signOut();
 	});  
+=======
+	/*
+	 * Shifting return
+	 */
+	document.getElementById("msg_info_return").onclick = function() {
+		this.style.display = "none";
+		document.getElementById("add").style.display = "block";
+		document.getElementById("outer_wrap").style.right = "0";
+		document.getElementById("msg_info").style.left = "100%";
+		document.getElementById("remove_post").style.left = "100%";
+	}
+>>>>>>> 4a65671e089faef8d20f2913c9209e71cb291c21
 }

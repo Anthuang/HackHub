@@ -158,6 +158,7 @@ nav > div:hover {
 	height: $msg_height;
 	padding: $msg_padding;
 	border-bottom: 1px solid $main_accent;
+	position: relative;
 
 	font-family: $side_font;
 	cursor: pointer;
@@ -171,6 +172,25 @@ nav > div:hover {
 
 #announcement, #meeting, #user {
 	display: none;
+}
+
+.remove_post {
+	height: 100%;
+	width: 5%;
+	top: 0;
+	right: 0;
+	position: absolute;
+
+	font-size: $font3;
+	cursor: pointer;
+
+	color: $main_accent;
+	border: none;
+	background: none;
+}
+
+.remove_post i:hover {
+	color: $error;
 }
 
 // Shifting and message info
@@ -187,11 +207,25 @@ nav > div:hover {
 	height: 100%;
 	left: 100%;
 	position: fixed;
-	padding: $msg_info_padding;
 
 	color: $main_accent;
 
 	transition: all 0.3s ease-out 0s;
+}
+
+#msg_info_wrap {
+	padding: $msg_info_padding;
+}
+
+#comment li {
+	height: $msg_height;
+	padding: $msg_padding;
+	border-top: 1px solid $main_accent;
+	position: relative;
+
+	font-family: $side_font;
+
+	color: $main_accent;
 }
 
 #msg_info_return {
