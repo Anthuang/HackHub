@@ -6,15 +6,11 @@ window.onload = function() {
 	/*
 	 * Switching tabs
 	 */
-	var logout = document.getElementById("logout");
-	logout.addEventListener('click', e => {
-		firebase.auth().signOut();
-	});  
 
 	var curr_user;
 	firebase.auth().onAuthStateChanged(user => {
 		if(user){
-			curr_user = firebase.auth().currentUser;
+			curr_user = user;
 		} else {
 			window.location.replace("not_logged_in.html")
 		}
@@ -78,12 +74,10 @@ window.onload = function() {
 		var add_text = document.getElementById("add_text").value;
 		var add_select = document.getElementById("add_select").value;
 		firebase_ref.child("Posts").push().set({
-	    title: add_title,
-	    text: add_text,
-	    select: add_select,
-		user: curr_user.uid,
-		comments: "",
-	  });
+			title: add_title,
+			text: add_text,
+			select: add_select
+		});
 
 	  // Clear
 		add_wrap.style.display = "none";
@@ -137,4 +131,9 @@ window.onload = function() {
 		document.getElementById(select).insertBefore(new_msg,
 			 document.getElementById(select).firstChild);
 	});
+
+	var logout = document.getElementById("logout");
+	logout.addEventListener('click', e => {
+		firebase.auth().signOut();
+	});  
 }
