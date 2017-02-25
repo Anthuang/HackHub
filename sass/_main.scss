@@ -217,6 +217,10 @@ nav > div:hover {
 	padding: $msg_info_padding;
 }
 
+#msg_info_return {
+	display: none;
+}
+
 #comment li {
 	height: $msg_height;
 	padding: $msg_padding;
@@ -228,6 +232,25 @@ nav > div:hover {
 	color: $main_accent;
 }
 
-#msg_info_return {
-	display: none;
+#comment_text {
+	display: block;
+	width: 90%;
+	height: $nav_height;
+	padding: $add_input_padding;
+	margin-bottom: $msg_padding;
+
+	font-size: $font2;
+
+	color: $main_accent;
+	border: 3px solid $main_accent;
+	border-radius: 1px;
+	outline: none;
+	background: none;
+}
+
+#comment_text {
+	height: $msg_height;
+	resize: none;
+
+	font-size: $font3;
 }

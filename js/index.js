@@ -42,7 +42,7 @@ window.onload = function() {
 	}
 
 	/*
-	 * Add functionality
+	 * Add post functionality
 	 */
 
 	var add = document.getElementById("add");
