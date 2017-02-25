@@ -59,7 +59,9 @@ select {
 }
 
 #add_wrap > div {
+	overflow-y: scroll;
 	height: 80%;
+	min-height: 600px;
 	width: 80%;
 	top: 50%;
   transform: translateY(-50%);
