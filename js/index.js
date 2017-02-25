@@ -10,6 +10,15 @@ function remove_post(key) {
 };
 
 window.onload = function() {
+
+	var data = [{ id: 0, text: 'Web' }, { id: 1, text: 'iOS' }, { id: 2, text: 'Android' }, { id: 3, text: 'Hardware' }, { id: 4, text: 'Others' }];
+	$("#selectBox").select2({
+		width: '100%',
+		data: data,
+		placeholder: "Tags",
+		allowclear: true,
+	});
+
 	/*
 	 * Switching tabs
 	 */
@@ -74,12 +83,14 @@ window.onload = function() {
 		var add_title = document.getElementById("add_title").value;
 		var add_text = document.getElementById("add_text").value;
 		var add_select = document.getElementById("add_select").value;
+		var add_tags = $("#selectBox").val();
 		firebase_ref.child("Posts").push().set({
 	    title: add_title,
 	    text: add_text,
 	    select: add_select,
-		user: curr_user.uid,
-		comments: "",
+			tags: add_tags,
+			user: curr_user.uid,
+			comments: "",
 	  });
 
 	  // Clear
@@ -106,6 +117,14 @@ window.onload = function() {
 		var title = snap.child("title").val();
 		var text = snap.child("text").val();
 		var select = snap.child("select").val();
+		var tags = snap.child("tags").val();
+		var tags_string = "";
+		for (var i = 0; i < snap.child("tags").numChildren() - 1; i++) {
+			tags_string += data[snap.child("tags").child(i).val()]['text'] + ", ";
+		}
+		if (snap.child("tags").numChildren() > 0) {
+			tags_string += data[snap.child("tags").child(snap.child("tags").numChildren() - 1).val()]['text'];
+		}
 		var new_msg = [];
 
 		if (select != "post") {
@@ -123,7 +142,7 @@ window.onload = function() {
 				document.getElementById("outer_wrap").style.right = "100%";
 				document.getElementById("msg_info").style.left = "0";
 			}, false);
-			new_msg[i].innerHTML = "<h1>" + title + "</h1>\n<h3>" + text + "</h3><button onclick='remove_post(\"" + snap.key + "\")' value='" + snap.key + "' class='remove_post'><i class='fa fa-times' aria-hidden='true'></i></button>";
+			new_msg[i].innerHTML = "<h1>" + title + "</h1>\n<h3>" + text + "</h3>\n<h4>Tags: " + tags_string + "</h4><button onclick='remove_post(\"" + snap.key + "\")' value='" + snap.key + "' class='remove_post'><i class='fa fa-times' aria-hidden='true'></i></button>";
 		}
 		if (select != "post") {
 			document.getElementById(select).insertBefore(new_msg[0], document.getElementById(select).firstChild);
