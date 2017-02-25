@@ -22,15 +22,11 @@ window.onload = function() {
 	/*
 	 * Switching tabs
 	 */
-	var logout = document.getElementById("logout");
-	logout.addEventListener('click', e => {
-		firebase.auth().signOut();
-	});
 
 	var curr_user;
 	firebase.auth().onAuthStateChanged(user => {
-		if (user) {
-			curr_user = firebase.auth().currentUser;
+		if(user){
+			curr_user = user;
 		} else {
 			window.location.replace("not_logged_in.html");
 		}
@@ -153,6 +149,12 @@ window.onload = function() {
 		new_msg.innerHTML = "<h1>" + title + "</h1>\n<h3>" + text + "</h3>\n<h4>Tags: " + tags_string + "<button onclick='remove_post(\"" + snap.key + "\")' value='" + snap.key + "' class='remove_post'><i class='fa fa-times' aria-hidden='true'></i></button>";
 		document.getElementById("post").insertBefore(new_msg, document.getElementById("post").firstChild);
 	});
+
+
+	var logout = document.getElementById("logout");
+	logout.addEventListener('click', e => {
+		firebase.auth().signOut();
+	});  
 
 	/*
 	 * Shifting return
