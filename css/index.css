@@ -4,26 +4,37 @@ html {
   background: #ff3b3f;
 }
 
-/* line 18, ../sass/_main.scss */
-#add {
+/* line 17, ../sass/_main.scss */
+body {
+  height: 100%;
+}
+
+/* line 21, ../sass/_main.scss */
+select {
+  color: #000;
+}
+
+/* line 25, ../sass/_main.scss */
+.circle_button {
   right: 50px;
   bottom: 50px;
   position: fixed;
-  font-size: 64px;
+  z-index: 1;
+  font-size: 64px !important;
   cursor: pointer;
   color: #f7b733;
 }
 
-/* line 29, ../sass/_main.scss */
+/* line 38, ../sass/_main.scss */
 #add_wrap {
   display: none;
   height: 100%;
   width: 100%;
   position: fixed;
-  z-index: 1;
+  z-index: 2;
 }
 
-/* line 37, ../sass/_main.scss */
+/* line 46, ../sass/_main.scss */
 #add_wrap > div {
   height: 80%;
   width: 80%;
@@ -36,14 +47,14 @@ html {
   box-shadow: 0 0 10px #555;
 }
 
-/* line 50, ../sass/_main.scss */
+/* line 59, ../sass/_main.scss */
 #add_wrap label {
   color: #fff;
   font-size: 24px;
   font-family: "Raleway", sans-serif;
 }
 
-/* line 56, ../sass/_main.scss */
+/* line 65, ../sass/_main.scss */
 #add_wrap input, #add_wrap textarea, #add_select {
   display: block;
   width: 90%;
@@ -58,14 +69,14 @@ html {
   background: none;
 }
 
-/* line 72, ../sass/_main.scss */
+/* line 81, ../sass/_main.scss */
 #add_wrap textarea {
   height: 100px;
   resize: none;
   font-size: 18px;
 }
 
-/* line 79, ../sass/_main.scss */
+/* line 88, ../sass/_main.scss */
 #add_submit {
   width: 80%;
   height: 40px;
@@ -76,7 +87,7 @@ html {
   background: #ff3b3f;
 }
 
-/* line 91, ../sass/_main.scss */
+/* line 100, ../sass/_main.scss */
 #add_submit:hover {
   border: none;
   border-top: 1px solid #ff3b3f;
@@ -84,7 +95,7 @@ html {
   background: #fff;
 }
 
-/* line 98, ../sass/_main.scss */
+/* line 107, ../sass/_main.scss */
 #add_exit {
   position: absolute;
   top: 15px;
@@ -94,7 +105,7 @@ html {
   color: #fff;
 }
 
-/* line 110, ../sass/_main.scss */
+/* line 119, ../sass/_main.scss */
 nav {
   height: 50px;
   width: 100%;
@@ -103,7 +114,7 @@ nav {
   font-family: "Open Sans", sans-serif;
 }
 
-/* line 119, ../sass/_main.scss */
+/* line 128, ../sass/_main.scss */
 nav > div {
   height: 100%;
   display: table-cell;
@@ -114,25 +125,25 @@ nav > div {
   background: #fff;
 }
 
-/* line 131, ../sass/_main.scss */
+/* line 140, ../sass/_main.scss */
 nav > div:hover {
   color: #fff;
   background: #ff3b3f;
 }
 
-/* line 136, ../sass/_main.scss */
+/* line 145, ../sass/_main.scss */
 .nav_active {
   color: #fff;
   background: #ff3b3f;
 }
 
-/* line 142, ../sass/_main.scss */
+/* line 151, ../sass/_main.scss */
 #main {
   width: 100%;
   background: #ff3b3f;
 }
 
-/* line 148, ../sass/_main.scss */
+/* line 157, ../sass/_main.scss */
 #main ul li {
   height: 100px;
   padding: 20px;
@@ -142,32 +153,38 @@ nav > div:hover {
   color: #fff;
 }
 
-/* line 159, ../sass/_main.scss */
+/* line 168, ../sass/_main.scss */
 #main ul li:hover {
   background: #ee2a2e;
 }
 
-/* line 163, ../sass/_main.scss */
+/* line 172, ../sass/_main.scss */
 #announcement, #meeting, #user {
   display: none;
 }
 
-/* line 168, ../sass/_main.scss */
+/* line 177, ../sass/_main.scss */
 #outer_wrap {
+  min-height: 100%;
   position: relative;
   right: 0;
   transition: all 0.3s ease-out 0s;
 }
 
-/* line 175, ../sass/_main.scss */
+/* line 185, ../sass/_main.scss */
 #msg_info {
   width: 100%;
   height: 100%;
   left: 100%;
-  position: absolute;
+  position: fixed;
   padding: 30px;
   color: #fff;
   transition: all 0.3s ease-out 0s;
+}
+
+/* line 197, ../sass/_main.scss */
+#msg_info_return {
+  display: none;
 }
 
 /* line 5, ../sass/index.scss */

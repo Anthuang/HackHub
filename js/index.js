@@ -31,11 +31,21 @@ window.onload = function() {
 	var add_exit = document.getElementById("add_exit");
 	add.onclick = function() {
 		add_wrap.style.display = "block";
-		outer_wrap.style.webkitFilter = "blur(2px) brightness(80%)";
+		outer_wrap.style.webkitFilter = "blur(3px)";
 	}
 	add_exit.onclick = function() {
 		add_wrap.style.display = "none";
 		outer_wrap.style.webkitFilter = "";
+	}
+
+	/*
+	 * Shifting return
+	 */
+	document.getElementById("msg_info_return").onclick = function() {
+		this.style.display = "none";
+		document.getElementById("add").style.display = "block";
+		document.getElementById("outer_wrap").style.right = "0";
+		document.getElementById("msg_info").style.left = "100%";
 	}
 
 	/*
@@ -91,6 +101,8 @@ window.onload = function() {
 			new_msg.onclick = function() {
 				document.getElementById("msg_info_title").innerHTML = title;
 				document.getElementById("msg_info_text").innerHTML = text;
+				document.getElementById("msg_info_return").style.display = "block";
+				document.getElementById("add").style.display = "none";
 				document.getElementById("outer_wrap").style.right = "100%";
 				document.getElementById("msg_info").style.left = "0";
 			}
@@ -101,6 +113,8 @@ window.onload = function() {
 		new_msg.onclick = function() {
 			document.getElementById("msg_info_title").innerHTML = title;
 			document.getElementById("msg_info_text").innerHTML = text;
+			document.getElementById("msg_info_return").style.display = "block";
+			document.getElementById("add").style.display = "none";
 			document.getElementById("outer_wrap").style.right = "100%";
 			document.getElementById("msg_info").style.left = "0";
 		}
