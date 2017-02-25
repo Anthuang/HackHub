@@ -10,8 +10,8 @@
 
 // Add
 #add {
-	right: 30px;
-	bottom: 30px;
+	right: $add_offset;
+	bottom: $add_offset;
 	position: fixed;
 
 	font-size: $font1 * 2;
@@ -26,8 +26,6 @@
 	width: 100%;
 	position: fixed;
 	z-index: 1;
-
-	box-shadow: 0 0 5px #000;
 }
 
 #add_wrap > div {
@@ -37,13 +35,35 @@
   transform: translateY(-50%);
 	position: relative;
 	margin: auto;
-	padding: 15px;
+	padding: $add_form_padding;
 
 	background: #fff;
+	box-shadow: 0 0 10px $add_base;
 }
 
-#add_wrap input {
+#add_wrap label {
+	font-size: $font2;
+	font-family: $main_font;
+}
 
+#add_wrap input, #add_wrap textarea, #add_select {
+	display: block;
+	width: 90%;
+	height: $nav_height;
+	padding: $add_input_padding;
+	margin-bottom: $msg_padding;
+
+	font-size: $font2;
+
+	border: 1px solid $main;
+	outline: none;
+}
+
+#add_wrap textarea {
+	height: $msg_height;
+	resize: none;
+
+	font-size: $font3;
 }
 
 #add_submit {
@@ -69,10 +89,10 @@
 
 #add_exit {
 	position: absolute;
-	top: 10px;
-	right: 10px;
+	top: $add_exit_offset;
+	right: $add_exit_offset;
 	
-	font-size: 50px;
+	font-size: $font1 * 2;
 	cursor: pointer;
 
 	color: $main;

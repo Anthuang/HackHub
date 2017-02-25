@@ -48,10 +48,18 @@ window.onload = function() {
 	  });
 	}
 
+	/*
+	 * Receiving data
+	 */
+
+	// Triggers when a value changes
+	// Receive snapshot which includes whole list of posts
 	firebase_ref.child("Posts").on('value', function(snapshot) {
 	  console.log(snapshot.val());
 	});
 
+	// Triggers when a post is added
+	// Receive a snap which is one post
 	firebase_ref.child("Posts").on('child_added', snap => {
 		var add_title = snap.child("title").val();
 		var add_text = snap.child("text").val();

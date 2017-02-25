@@ -8,24 +8,29 @@
 
 	<!-- CSS files -->
 	<link rel="stylesheet" type="text/css" href="css/index.css">
+	<link rel="stylesheet" href="css/font-awesome.min.css">
 
 	<!-- Fonts -->
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans|Raleway" rel="stylesheet">
 </head>
 <body>
-	<div id="add">+</div>
+	<i id="add" class="fa fa-plus" aria-hidden="true"></i>
 	<div id="add_wrap">
 		<div>
+			<label for="add_title">Title</label>
 			<input id="add_title" type="text"/>
+			<label for="add_text">Content</label>
 			<textarea id="add_text"></textarea>
+			<label for="add_tags">Tags</label>
 			<input id="add_tags" type="text"/>
+			<label for="add_select">Message type</label>
 			<select id="add_select">
 			  <option value="post">post</option>
 			  <option value="announcement">announcement</option>
 			  <option value="meeting">meeting</option>
 			</select>
 			<button id="add_submit">SUBMIT</button>
-			<div id="add_exit">x</div>
+			<i id="add_exit" class="fa fa-times" aria-hidden="true"></i>
 		</div>
 	</div>
 	<div id="outer_wrap">
