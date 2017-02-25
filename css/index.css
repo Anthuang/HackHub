@@ -1,7 +1,7 @@
 /* line 11, ../sass/_main.scss */
 html {
   overflow-x: hidden;
-  background: #ff3b3f;
+  background: #88bbd6;
 }
 
 /* line 17, ../sass/_main.scss */
@@ -22,7 +22,7 @@ select {
   z-index: 1;
   font-size: 64px !important;
   cursor: pointer;
-  color: #f7b733;
+  color: #6e7376;
 }
 
 /* line 38, ../sass/_main.scss */
@@ -43,13 +43,13 @@ select {
   position: relative;
   margin: auto;
   padding: 30px;
-  background: #ff3b3f;
+  background: #88bbd6;
   box-shadow: 0 0 10px #555;
 }
 
 /* line 59, ../sass/_main.scss */
 #add_wrap label {
-  color: #fff;
+  color: #e9e9e9;
   font-size: 24px;
   font-family: "Raleway", sans-serif;
 }
@@ -62,8 +62,8 @@ select {
   padding: 10px;
   margin-bottom: 20px;
   font-size: 24px;
-  color: #fff;
-  border: 3px solid #fff;
+  color: #e9e9e9;
+  border: 3px solid #e9e9e9;
   border-radius: 1px;
   outline: none;
   background: none;
@@ -82,17 +82,17 @@ select {
   height: 40px;
   font-size: 24px;
   cursor: pointer;
-  border: 3px solid #fff;
-  color: #fff;
-  background: #ff3b3f;
+  border: 3px solid #e9e9e9;
+  color: #e9e9e9;
+  background: #88bbd6;
 }
 
 /* line 100, ../sass/_main.scss */
 #add_submit:hover {
   border: none;
-  border-top: 1px solid #ff3b3f;
-  color: #ff3b3f;
-  background: #fff;
+  border-top: 1px solid #88bbd6;
+  color: #88bbd6;
+  background: #e9e9e9;
 }
 
 /* line 107, ../sass/_main.scss */
@@ -102,7 +102,7 @@ select {
   right: 15px;
   font-size: 64px;
   cursor: pointer;
-  color: #fff;
+  color: #e9e9e9;
 }
 
 /* line 119, ../sass/_main.scss */
@@ -121,41 +121,41 @@ nav > div {
   vertical-align: middle;
   text-align: center;
   cursor: pointer;
-  color: #000;
-  background: #fff;
+  color: #88bbd6;
+  background: #4a8dac;
 }
 
 /* line 140, ../sass/_main.scss */
 nav > div:hover {
-  color: #fff;
-  background: #ff3b3f;
+  color: #e9e9e9;
+  background: #88bbd6;
 }
 
 /* line 145, ../sass/_main.scss */
 .nav_active {
-  color: #fff;
-  background: #ff3b3f;
+  color: #e9e9e9;
+  background: #88bbd6;
 }
 
 /* line 151, ../sass/_main.scss */
 #main {
   width: 100%;
-  background: #ff3b3f;
+  background: #88bbd6;
 }
 
 /* line 157, ../sass/_main.scss */
 #main ul li {
   height: 100px;
   padding: 20px;
-  border-bottom: 1px solid #fff;
+  border-bottom: 1px solid #e9e9e9;
   font-family: "Raleway", sans-serif;
   cursor: pointer;
-  color: #fff;
+  color: #e9e9e9;
 }
 
 /* line 168, ../sass/_main.scss */
 #main ul li:hover {
-  background: #ee2a2e;
+  background: #4a8dac;
 }
 
 /* line 172, ../sass/_main.scss */
@@ -178,7 +178,7 @@ nav > div:hover {
   left: 100%;
   position: fixed;
   padding: 30px;
-  color: #fff;
+  color: #e9e9e9;
   transition: all 0.3s ease-out 0s;
 }
 

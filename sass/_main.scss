@@ -139,7 +139,7 @@ nav > div {
 
 nav > div:hover {
 	color: $main_accent;
-	background: $main;
+	background: $nav_hover;
 }
 
 .nav_active {
@@ -166,7 +166,7 @@ nav > div:hover {
 }
 
 #main ul li:hover {
-	background: $nav_hover;
+	background: $msg_hover;
 }
 
 #announcement, #meeting, #user {

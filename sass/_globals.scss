@@ -4,15 +4,18 @@ $side_font: "Raleway", sans-serif;
 
 // ==== Colors ====
 // Nav bar
-$nav_bar: #fff;
-$nav_bar_accent: #000;
-$nav_hover: #ee2a2e;
-$add_button: #f7b733;
+$nav_bar: #4a8dac;
+$nav_bar_accent: #88bbd6;
+$add_button: #6e7376;
 $add_button_accent: #fff;
 
 // Main panel
-$main: #ff3b3f;
-$main_accent: #fff;
+$main: #88bbd6;
+$main_accent: #e9e9e9;
+
+// Hovers
+$nav_hover: $main;
+$msg_hover: $nav_bar;
 
 // Shadows
 $add_base: #555;
