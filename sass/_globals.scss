@@ -6,12 +6,12 @@ $side_font: "Raleway", sans-serif;
 // Nav bar
 $nav_bar: #fff;
 $nav_bar_accent: #000;
-$nav_hover: #ff3b3f;
+$nav_hover: #ee2a2e;
 $add_button: #f7b733;
 $add_button_accent: #fff;
 
 // Main panel
-$main: $nav_hover;
+$main: #ff3b3f;
 $main_accent: #fff;
 
 // Shadows
@@ -29,6 +29,7 @@ $add_offset: 50px;
 $add_exit_offset: 15px;
 $add_form_padding: 30px;
 $add_input_padding: 10px;
+$msg_info_padding: 30px;
 
 // Font sizes
 $font1: 32px;

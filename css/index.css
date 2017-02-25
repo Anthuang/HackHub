@@ -1,9 +1,10 @@
 /* line 11, ../sass/_main.scss */
 html {
+  overflow-x: hidden;
   background: #ff3b3f;
 }
 
-/* line 16, ../sass/_main.scss */
+/* line 18, ../sass/_main.scss */
 #add {
   right: 50px;
   bottom: 50px;
@@ -13,7 +14,7 @@ html {
   color: #f7b733;
 }
 
-/* line 27, ../sass/_main.scss */
+/* line 29, ../sass/_main.scss */
 #add_wrap {
   display: none;
   height: 100%;
@@ -22,7 +23,7 @@ html {
   z-index: 1;
 }
 
-/* line 35, ../sass/_main.scss */
+/* line 37, ../sass/_main.scss */
 #add_wrap > div {
   height: 80%;
   width: 80%;
@@ -35,14 +36,14 @@ html {
   box-shadow: 0 0 10px #555;
 }
 
-/* line 48, ../sass/_main.scss */
+/* line 50, ../sass/_main.scss */
 #add_wrap label {
   color: #fff;
   font-size: 24px;
   font-family: "Raleway", sans-serif;
 }
 
-/* line 54, ../sass/_main.scss */
+/* line 56, ../sass/_main.scss */
 #add_wrap input, #add_wrap textarea, #add_select {
   display: block;
   width: 90%;
@@ -57,14 +58,14 @@ html {
   background: none;
 }
 
-/* line 70, ../sass/_main.scss */
+/* line 72, ../sass/_main.scss */
 #add_wrap textarea {
   height: 100px;
   resize: none;
   font-size: 18px;
 }
 
-/* line 77, ../sass/_main.scss */
+/* line 79, ../sass/_main.scss */
 #add_submit {
   width: 80%;
   height: 40px;
@@ -75,7 +76,7 @@ html {
   background: #ff3b3f;
 }
 
-/* line 89, ../sass/_main.scss */
+/* line 91, ../sass/_main.scss */
 #add_submit:hover {
   border: none;
   border-top: 1px solid #ff3b3f;
@@ -83,7 +84,7 @@ html {
   background: #fff;
 }
 
-/* line 96, ../sass/_main.scss */
+/* line 98, ../sass/_main.scss */
 #add_exit {
   position: absolute;
   top: 15px;
@@ -93,7 +94,7 @@ html {
   color: #fff;
 }
 
-/* line 108, ../sass/_main.scss */
+/* line 110, ../sass/_main.scss */
 nav {
   height: 50px;
   width: 100%;
@@ -102,7 +103,7 @@ nav {
   font-family: "Open Sans", sans-serif;
 }
 
-/* line 117, ../sass/_main.scss */
+/* line 119, ../sass/_main.scss */
 nav > div {
   height: 100%;
   display: table-cell;
@@ -113,36 +114,60 @@ nav > div {
   background: #fff;
 }
 
-/* line 129, ../sass/_main.scss */
+/* line 131, ../sass/_main.scss */
 nav > div:hover {
   color: #fff;
   background: #ff3b3f;
 }
 
-/* line 134, ../sass/_main.scss */
+/* line 136, ../sass/_main.scss */
 .nav_active {
   color: #fff;
   background: #ff3b3f;
 }
 
-/* line 140, ../sass/_main.scss */
+/* line 142, ../sass/_main.scss */
 #main {
   width: 100%;
   background: #ff3b3f;
 }
 
-/* line 146, ../sass/_main.scss */
+/* line 148, ../sass/_main.scss */
 #main ul li {
   height: 100px;
   padding: 20px;
   border-bottom: 1px solid #fff;
   font-family: "Raleway", sans-serif;
+  cursor: pointer;
   color: #fff;
 }
 
-/* line 156, ../sass/_main.scss */
+/* line 159, ../sass/_main.scss */
+#main ul li:hover {
+  background: #ee2a2e;
+}
+
+/* line 163, ../sass/_main.scss */
 #announcement, #meeting, #user {
   display: none;
+}
+
+/* line 168, ../sass/_main.scss */
+#outer_wrap {
+  position: relative;
+  right: 0;
+  transition: all 0.3s ease-out 0s;
+}
+
+/* line 175, ../sass/_main.scss */
+#msg_info {
+  width: 100%;
+  height: 100%;
+  left: 100%;
+  position: absolute;
+  padding: 30px;
+  color: #fff;
+  transition: all 0.3s ease-out 0s;
 }
 
 /* line 5, ../sass/index.scss */
@@ -170,15 +195,46 @@ ul {
 /* line 24, ../sass/index.scss */
 h1, h2, h3, h4, h5, h6 {
   margin: 0;
+  font-family: "Open Sans", sans-serif;
 }
 
-/* line 28, ../sass/index.scss */
+/* line 29, ../sass/index.scss */
+h1 {
+  font-size: 32px;
+}
+
+/* line 33, ../sass/index.scss */
+h2 {
+  font-size: 24px;
+}
+
+/* line 37, ../sass/index.scss */
+h3 {
+  font-size: 18px;
+}
+
+/* line 41, ../sass/index.scss */
+h4 {
+  font-size: 15px;
+}
+
+/* line 45, ../sass/index.scss */
+h5 {
+  font-size: 13px;
+}
+
+/* line 49, ../sass/index.scss */
+h6 {
+  font-size: 10px;
+}
+
+/* line 53, ../sass/index.scss */
 input, textarea, select {
   margin: 0;
   padding: 0;
 }
 
-/* line 33, ../sass/index.scss */
+/* line 58, ../sass/index.scss */
 div, button {
   outline: none;
 }

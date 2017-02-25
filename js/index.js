@@ -39,6 +39,12 @@ window.onload = function() {
 	}
 
 	/*
+	 *
+	 * Database stuff
+	 *
+	 */
+
+	/*
 	 * Sending stuff to Firebase
 	 */
 
@@ -81,10 +87,22 @@ window.onload = function() {
 		
 		if (select != "post") {
 			var new_msg = document.createElement("li");
+			new_msg.onclick = function() {
+				document.getElementById("msg_info_title").innerHTML = title;
+				document.getElementById("msg_info_text").innerHTML = text;
+				document.getElementById("outer_wrap").style.right = "100%";
+				document.getElementById("msg_info").style.left = "0";
+			}
 			new_msg.innerHTML = "<h1>" + title + "</h1>\n<h3>" + text + "</h3>";
 			document.getElementById("post").appendChild(new_msg);
 		}
 		var new_msg = document.createElement("li");
+		new_msg.onclick = function() {
+			document.getElementById("msg_info_title").innerHTML = title;
+			document.getElementById("msg_info_text").innerHTML = text;
+			document.getElementById("outer_wrap").style.right = "100%";
+			document.getElementById("msg_info").style.left = "0";
+		}
 		new_msg.innerHTML = "<h1>" + title + "</h1>\n<h3>" + text + "</h3>";
 		document.getElementById(select).appendChild(new_msg);
 	});
