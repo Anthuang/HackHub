@@ -20,6 +20,9 @@ login.addEventListener('click', e =>{
         });
         // [END createwithemail]
     });
+    console.log("account logged in");
+    document.getElementById("email").value = "";
+    document.getElementById("password").value = "";
 });
 
 
