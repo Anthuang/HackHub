@@ -8,6 +8,10 @@
 //   }
 // }
 
+html {
+	background: $main;
+}
+
 // Add
 #add {
 	right: $add_offset;
@@ -17,11 +21,11 @@
 	font-size: $font1 * 2;
 	cursor: pointer;
 
-	color: #fff;
+	color: $add_button;
 }
 
 #add_wrap {
-	// display: none;
+	display: none;
 	height: 100%;
 	width: 100%;
 	position: fixed;
@@ -37,13 +41,14 @@
 	margin: auto;
 	padding: $add_form_padding;
 
-	background: #fff;
+	background: $main;
 	box-shadow: 0 0 10px $add_base;
 }
 
 #add_wrap label {
+	color: $main_accent;
 	font-size: $font2;
-	font-family: $main_font;
+	font-family: $side_font;
 }
 
 #add_wrap input, #add_wrap textarea, #add_select {
@@ -55,8 +60,11 @@
 
 	font-size: $font2;
 
-	border: 1px solid $main;
+	color: $main_accent;
+	border: 3px solid $main_accent;
+	border-radius: 1px;
 	outline: none;
+	background: none;
 }
 
 #add_wrap textarea {
@@ -67,24 +75,22 @@
 }
 
 #add_submit {
-	width: 100%;
-	height: $msg_height;
-	bottom: 0;
-	left: 0;
-	position: absolute;
+	width: 80%;
+	height: $add_submit_height;
 
 	font-size: $font2;
 	cursor: pointer;
 
-	border: none;
-	border-top: 1px solid $main;
-	background: $main_accent;
+	border: 3px solid $main_accent;
+	color: $main_accent;
+	background: $main;
 }
 
 #add_submit:hover {
-	border: 1px solid $main_accent;
-	color: $main_accent;
-	background: $main;
+	border: none;
+	border-top: 1px solid $main;
+	color: $main;
+	background: $main_accent;
 }
 
 #add_exit {
@@ -95,7 +101,7 @@
 	font-size: $font1 * 2;
 	cursor: pointer;
 
-	color: $main;
+	color: $main_accent;
 }
 
 // Nav bar
@@ -140,12 +146,13 @@ nav > div:hover {
 #main ul li {
 	height: $msg_height;
 	padding: $msg_padding;
+	border-bottom: 1px solid $main_accent;
 
 	font-family: $side_font;
 
 	color: $main_accent;
 }
 
-#announcements, #meetings, #users {
+#announcement, #meeting, #user {
 	display: none;
 }

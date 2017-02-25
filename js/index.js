@@ -2,8 +2,9 @@ window.onload = function() {
 	/*
 	 * Switching tabs
 	 */
+
 	var arr = document.getElementsByClassName("nav_el");
-	var names = ["messages", "announcements", "meetings", "users"];
+	var names = ["post", "announcement", "meeting", "user"];
 	var last_active = 0;
 
 	for (var i = 0; i < arr.length; i++) {
@@ -19,6 +20,7 @@ window.onload = function() {
 	/*
 	 * Add functionality
 	 */
+
 	var add = document.getElementById("add");
 	var add_wrap = document.getElementById("add_wrap");
 	var outer_wrap = document.getElementById("outer_wrap");
@@ -35,6 +37,7 @@ window.onload = function() {
 	/*
 	 * Sending stuff to Firebase
 	 */
+
 	var firebase_ref = firebase.database().ref();
 	var submit = document.getElementById("add_submit");
 	submit.onclick = function() {
@@ -55,15 +58,23 @@ window.onload = function() {
 	// Triggers when a value changes
 	// Receive snapshot which includes whole list of posts
 	firebase_ref.child("Posts").on('value', function(snapshot) {
-	  console.log(snapshot.val());
+	  // console.log(snapshot.val());
 	});
 
 	// Triggers when a post is added
 	// Receive a snap which is one post
 	firebase_ref.child("Posts").on('child_added', snap => {
-		var add_title = snap.child("title").val();
-		var add_text = snap.child("text").val();
-		console.log(add_title);
-		console.log(add_text);
+		var title = snap.child("title").val();
+		var text = snap.child("text").val();
+		var select = snap.child("select").val();
+		
+		if (select != "post") {
+			var new_msg = document.createElement("li");
+			new_msg.innerHTML = "<h1>" + title + "</h1>\n<h3>" + text + "</h3>";
+			document.getElementById("post").appendChild(new_msg);
+		}
+		var new_msg = document.createElement("li");
+		new_msg.innerHTML = "<h1>" + title + "</h1>\n<h3>" + text + "</h3>";
+		document.getElementById(select).appendChild(new_msg);
 	});
 }

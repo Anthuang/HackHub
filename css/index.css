@@ -1,22 +1,28 @@
-/* line 12, ../sass/_main.scss */
+/* line 11, ../sass/_main.scss */
+html {
+  background: #ff3b3f;
+}
+
+/* line 16, ../sass/_main.scss */
 #add {
   right: 50px;
   bottom: 50px;
   position: fixed;
   font-size: 64px;
   cursor: pointer;
-  color: #fff;
+  color: #f7b733;
 }
 
-/* line 23, ../sass/_main.scss */
+/* line 27, ../sass/_main.scss */
 #add_wrap {
+  display: none;
   height: 100%;
   width: 100%;
   position: fixed;
   z-index: 1;
 }
 
-/* line 31, ../sass/_main.scss */
+/* line 35, ../sass/_main.scss */
 #add_wrap > div {
   height: 80%;
   width: 80%;
@@ -25,17 +31,18 @@
   position: relative;
   margin: auto;
   padding: 30px;
-  background: #fff;
+  background: #ff3b3f;
   box-shadow: 0 0 10px #555;
 }
 
-/* line 44, ../sass/_main.scss */
+/* line 48, ../sass/_main.scss */
 #add_wrap label {
+  color: #fff;
   font-size: 24px;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Raleway", sans-serif;
 }
 
-/* line 49, ../sass/_main.scss */
+/* line 54, ../sass/_main.scss */
 #add_wrap input, #add_wrap textarea, #add_select {
   display: block;
   width: 90%;
@@ -43,49 +50,50 @@
   padding: 15px;
   margin-bottom: 20px;
   font-size: 24px;
-  border: 1px solid #ff3b3f;
+  color: #fff;
+  border: 3px solid #fff;
+  border-radius: 1px;
   outline: none;
+  background: none;
 }
 
-/* line 62, ../sass/_main.scss */
+/* line 70, ../sass/_main.scss */
 #add_wrap textarea {
   height: 100px;
   resize: none;
   font-size: 18px;
 }
 
-/* line 69, ../sass/_main.scss */
+/* line 77, ../sass/_main.scss */
 #add_submit {
-  width: 100%;
-  height: 100px;
-  bottom: 0;
-  left: 0;
-  position: absolute;
+  width: 80%;
+  height: 40px;
   font-size: 24px;
   cursor: pointer;
-  border: none;
-  border-top: 1px solid #ff3b3f;
-  background: #fff;
-}
-
-/* line 84, ../sass/_main.scss */
-#add_submit:hover {
-  border: 1px solid #fff;
+  border: 3px solid #fff;
   color: #fff;
   background: #ff3b3f;
 }
 
-/* line 90, ../sass/_main.scss */
+/* line 89, ../sass/_main.scss */
+#add_submit:hover {
+  border: none;
+  border-top: 1px solid #ff3b3f;
+  color: #ff3b3f;
+  background: #fff;
+}
+
+/* line 96, ../sass/_main.scss */
 #add_exit {
   position: absolute;
   top: 15px;
   right: 15px;
   font-size: 64px;
   cursor: pointer;
-  color: #ff3b3f;
+  color: #fff;
 }
 
-/* line 102, ../sass/_main.scss */
+/* line 108, ../sass/_main.scss */
 nav {
   height: 50px;
   width: 100%;
@@ -94,7 +102,7 @@ nav {
   font-family: "Open Sans", sans-serif;
 }
 
-/* line 111, ../sass/_main.scss */
+/* line 117, ../sass/_main.scss */
 nav > div {
   height: 100%;
   display: table-cell;
@@ -105,38 +113,45 @@ nav > div {
   background: #fff;
 }
 
-/* line 123, ../sass/_main.scss */
+/* line 129, ../sass/_main.scss */
 nav > div:hover {
   color: #fff;
   background: #ff3b3f;
 }
 
-/* line 128, ../sass/_main.scss */
+/* line 134, ../sass/_main.scss */
 .nav_active {
   color: #fff;
   background: #ff3b3f;
 }
 
-/* line 134, ../sass/_main.scss */
+/* line 140, ../sass/_main.scss */
 #main {
   width: 100%;
   background: #ff3b3f;
 }
 
-/* line 140, ../sass/_main.scss */
+/* line 146, ../sass/_main.scss */
 #main ul li {
   height: 100px;
   padding: 20px;
+  border-bottom: 1px solid #fff;
   font-family: "Raleway", sans-serif;
   color: #fff;
 }
 
-/* line 149, ../sass/_main.scss */
-#announcements, #meetings, #users {
+/* line 156, ../sass/_main.scss */
+#announcement, #meeting, #user {
   display: none;
 }
 
 /* line 5, ../sass/index.scss */
+html {
+  height: 100%;
+  width: 100%;
+}
+
+/* line 10, ../sass/index.scss */
 body {
   margin: 0;
   top: 0;
@@ -145,20 +160,25 @@ body {
   right: 0;
 }
 
-/* line 13, ../sass/index.scss */
+/* line 18, ../sass/index.scss */
 ul {
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
-/* line 19, ../sass/index.scss */
+/* line 24, ../sass/index.scss */
 h1, h2, h3, h4, h5, h6 {
   margin: 0;
 }
 
-/* line 23, ../sass/index.scss */
+/* line 28, ../sass/index.scss */
 input, textarea, select {
   margin: 0;
   padding: 0;
+}
+
+/* line 33, ../sass/index.scss */
+div, button {
+  outline: none;
 }
