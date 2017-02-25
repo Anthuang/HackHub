@@ -1,6 +1,6 @@
 window.onload = function() {
 	/*
-	 * Switching tabs 
+	 * Switching tabs
 	 */
 	var arr = document.getElementsByClassName("nav_el");
 	var names = ["messages", "announcements", "meetings", "users"];
@@ -17,7 +17,7 @@ window.onload = function() {
 	}
 
 	/*
-	 * Add functionality 
+	 * Add functionality
 	 */
 	var add = document.getElementById("add");
 	var add_wrap = document.getElementById("add_wrap");
@@ -30,5 +30,19 @@ window.onload = function() {
 	add_exit.onclick = function() {
 		add_wrap.style.display = "none";
 		outer_wrap.style.webkitFilter = "";
+	}
+
+	//
+	var firebase_ref = firebase.database().ref();
+	var submit = document.getElementById("add_submit");
+	submit.onclick = function() {
+		var add_title = document.getElementById("add_title").value;
+		var add_text = document.getElementById("add_text").value;
+		// firebase_ref.child("Posts").push().set(add_text);
+		firebase_ref.child("Posts").push().set({
+	    title: add_title,
+	    text: add_text,
+	  });
+		// alert("done");
 	}
 }
