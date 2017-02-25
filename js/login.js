@@ -30,13 +30,10 @@ login.addEventListener('click', e =>{
     
 // }
 
-logout.addEventListener('click', e => {
-    firebase.auth().signOut();
-});
-
 firebase.auth().onAuthStateChanged(user => {
   if (user) {
    console.log(user);
+   window.location.replace("index.html");
   } else {
     console.log("not logged in");
   }
