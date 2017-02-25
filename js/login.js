@@ -25,14 +25,9 @@ login.addEventListener('click', e =>{
     document.getElementById("password").value = "";
 });
 
-
-// login_button.onclick = function() {
-    
-// }
-
 firebase.auth().onAuthStateChanged(user => {
   if (user) {
-   console.log(user);
+   console.log(user.uid);
    window.location.replace("index.html");
   } else {
     console.log("not logged in");
