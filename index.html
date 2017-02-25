@@ -1,13 +1,66 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<link rel="stylesheet" type="text/css" href="css/index.css">
-	<script type='text/javascript' src='js/index.js'></script>
-	
+	<!-- Firebase and JS files-->
 	<script src="https://www.gstatic.com/firebasejs/3.6.10/firebase.js"></script>
-	<script src="firebase_init.js"></script>
+	<script src="js/firebase_init.js"></script>
+	<script type='text/javascript' src='js/index.js'></script>	
+
+	<!-- CSS files -->
+	<link rel="stylesheet" type="text/css" href="css/index.css">
+
+	<!-- Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans|Raleway" rel="stylesheet">
 </head>
 <body>
-	<h1>hi</h1>
+	<div id="add">+</div>
+	<div id="add_wrap">
+		<div>
+			<div id="add_exit">x</div>
+		</div>
+	</div>
+	<div id="outer_wrap">
+		<nav>
+			<div value="0" class="nav_el nav_active"><h3>Home</h3></div>
+			<div value="1" class="nav_el"><h3>Announcement</h3></div>
+			<div value="2" class="nav_el"><h3>Meeting</h3></div>
+			<div value="3" class="nav_el"><h3>User</h3></div>
+			<div id="search"><h3>Search</h3></div>
+		</nav>
+
+		<div id="main">
+			<ul id="messages">
+				<li><h3>Chat going so fast W00000000000000000000W</h3></li>
+				<li><h3>Chat going so fast W00000000000000000000W</h3></li>
+				<li><h3>Chat going so fast W00000000000000000000W</h3></li>
+				<li><h3>Chat going so fast W00000000000000000000W</h3></li>
+				<li><h3>Chat going so fast W00000000000000000000W</h3></li>
+				<li><h3>Chat going so fast W00000000000000000000W</h3></li>
+			</ul>
+			<ul id="announcements">
+				<li><h3>ATTENTION PLS</h3></li>
+				<li><h3>ATTENTION PLS</h3></li>
+				<li><h3>ATTENTION PLS</h3></li>
+				<li><h3>ATTENTION PLS</h3></li>
+				<li><h3>ATTENTION PLS</h3></li>
+				<li><h3>ATTENTION PLS</h3></li>
+			</ul>
+			<ul id="meetings">
+				<li><h3>letz meet</h3></li>
+				<li><h3>letz meet</h3></li>
+				<li><h3>letz meet</h3></li>
+				<li><h3>letz meet</h3></li>
+				<li><h3>letz meet</h3></li>
+				<li><h3>letz meet</h3></li>
+			</ul>
+			<ul id="users">
+				<li><h3>USER STUFF LUL</h3></li>
+				<li><h3>USER STUFF LUL</h3></li>
+				<li><h3>USER STUFF LUL</h3></li>
+				<li><h3>USER STUFF LUL</h3></li>
+				<li><h3>USER STUFF LUL</h3></li>
+			</ul>
+		</div>
+	</div>
 </body>
 </html>

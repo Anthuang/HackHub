@@ -1,0 +1,14 @@
+// Layout 1: Main Desktop
+// Widths: 960px+
+// - This is the default on most computer screens.
+// - In 1080p, splitting the screen will go to "mobile" mode.
+$default: "min-width: 960px";
+
+// Layout 2: "Tablet" view
+// Widths: 520px - 959px
+$tablet: "max-width: 959px";
+
+// Layout 3: "Mobile" view
+// Widths: 0 - 519px
+$mobile: "max-width: 519px";
+$mobile_scale: 0.75; // multiply this number to ALL font sizes at mobile

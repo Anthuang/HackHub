@@ -1,0 +1,104 @@
+//
+// This is CSS for the main page
+//
+
+// @media only screen and ($mobile) {
+//   body {
+//     background-color: $nav_bar_accent;
+//   }
+// }
+
+// Add
+#add {
+	right: 30px;
+	bottom: 30px;
+	position: fixed;
+
+	font-size: 50px;
+	cursor: pointer;
+
+	color: #fff;
+}
+
+#add_wrap {
+	display: none;
+	height: 100%;
+	width: 100%;
+	position: fixed;
+	z-index: 1;
+
+	box-shadow: 0 0 5px #000;
+}
+
+#add_wrap > div {
+	position: relative;
+	height: 80%;
+	width: 80%;
+	top: 50%;
+  transform: translateY(-50%);
+	margin: auto;
+	background: #fff;
+}
+
+#add_exit {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	
+	font-size: 50px;
+	cursor: pointer;
+
+	color: $main;
+}
+
+// Nav bar
+nav {
+	height: $nav_height;
+	width: 100%;
+	display: table;
+	table-layout: fixed;
+
+	font-family: $main_font;
+}
+
+nav > div {
+	height: 100%;
+	display: table-cell;
+	vertical-align: middle;
+
+	text-align: center;
+	cursor: pointer;
+
+	color: $nav_bar_accent;
+	background: $nav_bar;
+}
+
+nav > div:hover {
+	color: $main_accent;
+	background: $nav_hover;
+}
+
+.nav_active {
+	color: $main_accent;
+	background: $main;
+}
+
+// Main panel
+#main {
+	width: 100%;
+
+	background: $main;
+}
+
+#main ul li {
+	height: $msg_height;
+	padding: $msg_padding;
+
+	font-family: $side_font;
+
+	color: $main_accent;
+}
+
+#announcements, #meetings, #users {
+	display: none;
+}
