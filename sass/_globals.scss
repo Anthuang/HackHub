@@ -12,6 +12,7 @@ $add_button_accent: #fff;
 // Main panel
 $main: #88bbd6;
 $main_accent: #e9e9e9;
+$main_hover: #77aac5;
 
 // Hovers
 $nav_hover: $main;
@@ -20,6 +21,9 @@ $msg_hover: $nav_bar;
 // Shadows
 $add_base: #555;
 
+// Other
+$error: #ff4c4c;
+
 // ==== Numbers ====
 // Heights
 $nav_height: 50px;
@@ -27,9 +31,13 @@ $msg_height: 100px;
 $msg_padding: 20px;
 $add_submit_height: 40px;
 
+// Widths
+$remove_post_width: 40px;
+
 // Offsets
 $add_offset: 50px;
 $add_exit_offset: 15px;
+$remove_post_offset: 15px;
 $add_form_padding: 30px;
 $add_input_padding: 10px;
 $msg_info_padding: 30px;
