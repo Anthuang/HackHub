@@ -22,6 +22,7 @@ login.addEventListener('click', e =>{
     console.log("account logged in");
     document.getElementById("email").value = "";
     document.getElementById("password").value = "";
+    window.location.replace("index.html");
 });
 
 signup.addEventListener('click', e => {
@@ -47,6 +48,7 @@ signup.addEventListener('click', e => {
     firebase_ref.child("Users").child(curr_user).set({
         mentor: mentor_status
     });
+    window.location.replace("index.html");
 });
 
 

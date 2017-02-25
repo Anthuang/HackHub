@@ -28,7 +28,7 @@ window.onload = function() {
 		if(user){
 			curr_user = user;
 		} else {
-			window.location.replace("not_logged_in.html");
+			//window.location.replace("not_logged_in.html");
 		}
 	});
 	// console.log(curr_user);
