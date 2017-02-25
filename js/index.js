@@ -48,6 +48,7 @@ window.onload = function() {
 	    title: add_title,
 	    text: add_text,
 	    select: add_select,
+		user: user.uid
 	  });
 	}
 
