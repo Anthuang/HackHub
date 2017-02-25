@@ -125,15 +125,10 @@ window.onload = function() {
 		if (snap.child("tags").numChildren() > 0) {
 			tags_string += data[snap.child("tags").child(snap.child("tags").numChildren() - 1).val()]['text'];
 		}
-		var new_msg = [];
 
 		if (select != "post") {
-			new_msg.push(document.createElement("li"));
-		}
-		new_msg.push(document.createElement("li"));
-
-		for (var i = 0; i < new_msg.length; i++) {
-			new_msg[i].addEventListener('click', function(e) {
+			var new_msg = document.createElement("li");
+			new_msg.addEventListener('click', function(e) {
 				window.scrollTo(0, 0);
 				document.getElementById("msg_info_title").innerHTML = title;
 				document.getElementById("msg_info_text").innerHTML = text;
@@ -142,14 +137,21 @@ window.onload = function() {
 				document.getElementById("outer_wrap").style.right = "100%";
 				document.getElementById("msg_info").style.left = "0";
 			}, false);
-			new_msg[i].innerHTML = "<h1>" + title + "</h1>\n<h3>" + text + "</h3>\n<h4>Tags: " + tags_string + "</h4><button onclick='remove_post(\"" + snap.key + "\")' value='" + snap.key + "' class='remove_post'><i class='fa fa-times' aria-hidden='true'></i></button>";
+			new_msg.innerHTML = "<h1>" + title + "</h1>\n<h3>" + text + "</h3>\n<h4>Tags: " + tags_string + "</h4><button onclick='remove_post(\"" + snap.key + "\")' value='" + snap.key + "' class='remove_post'><i class='fa fa-times' aria-hidden='true'></i></button>";
+			document.getElementById(select).insertBefore(new_msg, document.getElementById(select).firstChild);
 		}
-		if (select != "post") {
-			document.getElementById(select).insertBefore(new_msg[0], document.getElementById(select).firstChild);
-			new_msg.pop();
-		}
-		document.getElementById("post").insertBefore(new_msg[0], document.getElementById("post").firstChild);
-		new_msg.pop();
+		var new_msg = document.createElement("li");
+		new_msg.addEventListener('click', function(e) {
+			window.scrollTo(0, 0);
+			document.getElementById("msg_info_title").innerHTML = title;
+			document.getElementById("msg_info_text").innerHTML = text;
+			document.getElementById("msg_info_return").style.display = "block";
+			document.getElementById("add").style.display = "none";
+			document.getElementById("outer_wrap").style.right = "100%";
+			document.getElementById("msg_info").style.left = "0";
+		}, false);
+		new_msg.innerHTML = "<h1>" + title + "</h1>\n<h3>" + text + "</h3>\n<h4>Tags: " + tags_string + "<button onclick='remove_post(\"" + snap.key + "\")' value='" + snap.key + "' class='remove_post'><i class='fa fa-times' aria-hidden='true'></i></button>";
+		document.getElementById("post").insertBefore(new_msg, document.getElementById("post").firstChild);
 	});
 
 	/*
