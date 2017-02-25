@@ -9,27 +9,38 @@
 // }
 
 html {
+	overflow-x: hidden;
+
 	background: $main;
 }
 
-// Add
-#add {
+body {
+	height: 100%;
+}
+
+select {
+	color: #000;
+}
+
+.circle_button {
 	right: $add_offset;
 	bottom: $add_offset;
 	position: fixed;
+	z-index: 1;
 
-	font-size: $font1 * 2;
+	font-size: $font1 * 2 !important;
 	cursor: pointer;
 
 	color: $add_button;
 }
 
+// Add
 #add_wrap {
 	display: none;
 	height: 100%;
 	width: 100%;
 	position: fixed;
-	z-index: 1;
+	z-index: 2;
 }
 
 #add_wrap > div {
@@ -149,10 +160,40 @@ nav > div:hover {
 	border-bottom: 1px solid $main_accent;
 
 	font-family: $side_font;
+	cursor: pointer;
 
 	color: $main_accent;
 }
 
+#main ul li:hover {
+	background: $msg_hover;
+}
+
 #announcement, #meeting, #user {
+	display: none;
+}
+
+// Shifting and message info
+#outer_wrap {
+	min-height: 100%;
+	position: relative;
+	right: 0;
+
+	transition: all 0.3s ease-out 0s;
+}
+
+#msg_info {
+	width: 100%;
+	height: 100%;
+	left: 100%;
+	position: fixed;
+	padding: $msg_info_padding;
+
+	color: $main_accent;
+
+	transition: all 0.3s ease-out 0s;
+}
+
+#msg_info_return {
 	display: none;
 }

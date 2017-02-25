@@ -1,4 +1,8 @@
 window.onload = function() {
+	function clearField(input) {
+    input.value = "";
+	};
+
 	/*
 	 * Switching tabs
 	 */
@@ -40,12 +44,28 @@ window.onload = function() {
 	var add_exit = document.getElementById("add_exit");
 	add.onclick = function() {
 		add_wrap.style.display = "block";
-		outer_wrap.style.webkitFilter = "blur(2px) brightness(80%)";
+		outer_wrap.style.webkitFilter = "blur(3px)";
 	}
 	add_exit.onclick = function() {
 		add_wrap.style.display = "none";
 		outer_wrap.style.webkitFilter = "";
 	}
+
+	/*
+	 * Shifting return
+	 */
+	document.getElementById("msg_info_return").onclick = function() {
+		this.style.display = "none";
+		document.getElementById("add").style.display = "block";
+		document.getElementById("outer_wrap").style.right = "0";
+		document.getElementById("msg_info").style.left = "100%";
+	}
+
+	/*
+	 *
+	 * Database stuff
+	 *
+	 */
 
 	/*
 	 * Sending stuff to Firebase
@@ -64,6 +84,13 @@ window.onload = function() {
 		user: curr_user.uid,
 		comments: "",
 	  });
+
+	  // Clear
+		add_wrap.style.display = "none";
+		outer_wrap.style.webkitFilter = "";
+		clearField(document.getElementById("add_title"));
+		clearField(document.getElementById("add_text"));
+		clearField(document.getElementById("add_tags"));
 	}
 
 	/*
@@ -85,11 +112,27 @@ window.onload = function() {
 		
 		if (select != "post") {
 			var new_msg = document.createElement("li");
+			new_msg.onclick = function() {
+				document.getElementById("msg_info_title").innerHTML = title;
+				document.getElementById("msg_info_text").innerHTML = text;
+				document.getElementById("msg_info_return").style.display = "block";
+				document.getElementById("add").style.display = "none";
+				document.getElementById("outer_wrap").style.right = "100%";
+				document.getElementById("msg_info").style.left = "0";
+			}
 			new_msg.innerHTML = "<h1>" + title + "</h1>\n<h3>" + text + "</h3>";
 			document.getElementById("post").insertBefore(new_msg,
 			 document.getElementById("post").firstChild);
 		}
 		var new_msg = document.createElement("li");
+		new_msg.onclick = function() {
+			document.getElementById("msg_info_title").innerHTML = title;
+			document.getElementById("msg_info_text").innerHTML = text;
+			document.getElementById("msg_info_return").style.display = "block";
+			document.getElementById("add").style.display = "none";
+			document.getElementById("outer_wrap").style.right = "100%";
+			document.getElementById("msg_info").style.left = "0";
+		}
 		new_msg.innerHTML = "<h1>" + title + "</h1>\n<h3>" + text + "</h3>";
 		document.getElementById(select).appendChild(new_msg);
 	});
