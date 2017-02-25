@@ -239,13 +239,13 @@ nav > div:hover {
   display: none;
 }
 
-/* line 241, ../sass/_main.scss */
+/* line 242, ../sass/_main.scss */
 #comment {
   margin-bottom: 20px;
   border-bottom: 1px solid #e9e9e9;
 }
 
-/* line 247, ../sass/_main.scss */
+/* line 248, ../sass/_main.scss */
 #comment li {
   height: 100px;
   padding: 20px;
@@ -255,14 +255,14 @@ nav > div:hover {
   color: #e9e9e9;
 }
 
-/* line 258, ../sass/_main.scss */
+/* line 259, ../sass/_main.scss */
 #msg_info label {
   color: #e9e9e9;
   font-size: 24px;
   font-family: "Raleway", sans-serif;
 }
 
-/* line 264, ../sass/_main.scss */
+/* line 265, ../sass/_main.scss */
 #comment_text {
   display: block;
   width: 90%;
@@ -278,7 +278,7 @@ nav > div:hover {
   resize: none;
 }
 
-/* line 281, ../sass/_main.scss */
+/* line 282, ../sass/_main.scss */
 #comment_submit {
   width: 80%;
   height: 40px;
@@ -292,12 +292,30 @@ nav > div:hover {
   background: #88bbd6;
 }
 
-/* line 296, ../sass/_main.scss */
+/* line 297, ../sass/_main.scss */
 #comment_submit:hover {
   border: none;
   border-top: 1px solid #88bbd6;
   color: #88bbd6;
   background: #e9e9e9;
+}
+
+/* line 305, ../sass/_main.scss */
+.select2-selection {
+  border: none;
+}
+
+/* line 309, ../sass/_main.scss */
+.select2-selection--multiple {
+  width: 90%;
+  background: none !important;
+  border: 3px solid #e9e9e9 !important;
+  border-radius: 1px;
+}
+
+/* line 317, ../sass/_main.scss */
+.select2-search__field {
+  color: #main_accent !important;
 }
 
 /* line 5, ../sass/index.scss */

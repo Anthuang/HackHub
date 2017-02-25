@@ -210,7 +210,7 @@ nav > div:hover {
 	color: $error;
 }
 
-// Shifting and message info
+// Message info
 #outer_wrap {
 	min-height: 100%;
 	position: relative;
@@ -238,6 +238,7 @@ nav > div:hover {
 	display: none;
 }
 
+// Comment
 #comment {
 	margin-bottom: $comment_spacing;
 
@@ -298,4 +299,21 @@ nav > div:hover {
 	border-top: 1px solid $main;
 	color: $main;
 	background: $main_accent;
+}
+
+// select2 styling
+.select2-selection {
+	border: none;
+}
+
+.select2-selection--multiple {
+  width: 90%;
+
+	background: none !important;
+	border: 3px solid $main_accent !important;
+  border-radius: 1px;
+}
+
+.select2-search__field {
+	color: #main_accent !important;
 }

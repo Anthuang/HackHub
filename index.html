@@ -33,12 +33,14 @@
 		<textarea id="comment_text" placeholder="Comment"></textarea>
 		<button id="comment_submit">SUBMIT</button>
 	</div>
-	<i id="add" class="fa fa-plus-circle circle_button" aria-hidden="true"></i>
+	
+	<!-- Return icon -->
 	<i id="msg_info_return" class="fa fa-reply circle_button" aria-hidden="true"></i>
 
 	<!-- Adding new messages -->
 	<div id="add_wrap">
 		<div>
+		  <!-- Essentially a form -->
 			<label for="add_title">Title</label>
 			<input id="add_title" type="text"/>
 			<label for="add_text">Content</label>
@@ -57,6 +59,9 @@
 
 	<!-- Wraps main content -->
 	<div id="outer_wrap">
+		<!-- Put the plus button in here to get the blur on it-->
+		<i id="add" class="fa fa-plus-circle circle_button" aria-hidden="true"></i>
+		
 		<!-- Navigation -->
 		<nav>
 			<div value="0" class="nav_el nav_active"><h3>Home</h3></div>
