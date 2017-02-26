@@ -224,7 +224,7 @@ nav > div:hover {
   width: 100%;
   height: 100%;
   left: 100%;
-  position: fixed;
+  position: absolute;
   color: #e9e9e9;
   transition: all 0.3s ease-out 0s;
 }
@@ -247,8 +247,8 @@ nav > div:hover {
 
 /* line 248, ../sass/_main.scss */
 #comment li {
-  height: 100px;
-  padding: 20px;
+  height: 75px;
+  padding: 10px;
   border-top: 1px solid #e9e9e9;
   position: relative;
   font-family: "Raleway", sans-serif;
@@ -284,6 +284,7 @@ nav > div:hover {
   height: 40px;
   margin: auto;
   margin-top: 20px;
+  margin-bottom: 60px;
   display: block;
   font-size: 24px;
   cursor: pointer;
@@ -292,7 +293,7 @@ nav > div:hover {
   background: #88bbd6;
 }
 
-/* line 297, ../sass/_main.scss */
+/* line 298, ../sass/_main.scss */
 #comment_submit:hover {
   border: none;
   border-top: 1px solid #88bbd6;
@@ -300,12 +301,12 @@ nav > div:hover {
   background: #e9e9e9;
 }
 
-/* line 305, ../sass/_main.scss */
+/* line 306, ../sass/_main.scss */
 .select2-selection {
   border: none;
 }
 
-/* line 309, ../sass/_main.scss */
+/* line 310, ../sass/_main.scss */
 .select2-selection--multiple {
   width: 90%;
   background: none !important;
@@ -313,7 +314,7 @@ nav > div:hover {
   border-radius: 1px;
 }
 
-/* line 317, ../sass/_main.scss */
+/* line 318, ../sass/_main.scss */
 .select2-search__field {
   color: #main_accent !important;
 }
