@@ -268,7 +268,7 @@ window.onload = function() {
 	});
 
   firebase.database().ref("Posts").orderByChild("user").equalTo(curr_user).on("child_added", function(snapshot) {
-    // console.log(snapshot.val());
+    console.log(snapshot.val());
     var tags = snapshot.child("tags").val();
 		var tags_string = "";
 		for (var i = 0; i < snapshot.child("tags").numChildren() - 1; i++) {
