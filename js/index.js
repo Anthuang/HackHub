@@ -163,6 +163,7 @@ window.onload = function() {
     var commentHTML = document.getElementById("comment");
     var commentTA = document.getElementById("comment_text");
 
+		/********************************************************/
 		var posts_ref = firebase.database().ref("Posts");
 		posts_ref.orderByChild("user").equalTo(snap.child("user").val()).on("child_added",
 		function(snapshot) {
@@ -180,8 +181,9 @@ window.onload = function() {
         document.getElementById("post_id").value = snap.key;
 			}, false);
 			new_msg.innerHTML = "<h1>" + title + "</h1>\n<h3>" + text + "</h3>\n<h4>Tags: " + tags_string + "</h4><button onclick='remove_post(\"" + snap.key + "\")' value='" + snap.key + "' class='remove_post'><i class='fa fa-times' aria-hidden='true'></i></button>";
-			document.getElementById(select).insertBefore(new_msg, document.getElementById(select).firstChild);
+			document.getElementById("user").insertBefore(new_msg, document.getElementById("user").firstChild);
 		});
+		/***********************************************************/
 
 		if (select != "post") {
 			var new_msg = document.createElement("li");
