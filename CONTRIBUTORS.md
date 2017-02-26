@@ -4,4 +4,6 @@ Core team
 * [Thomas Huang](https://github.com/thomasehuang)
 * [Anton Yang](https://github.com/theunderpaidone)
 
-We'd also like to thank all faculty and mentors who attended HackIllinois 2017 for their time and support.
+We'd like to thank all faculty and mentors who attended HackIllinois 2017 for their time and support.
+
+We'd also like to thank anyone who took the time to look at our project and give constructive feedback.
