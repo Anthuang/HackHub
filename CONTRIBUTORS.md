@@ -1,4 +1,5 @@
 # Contributors
+Core team
 * Anthony Huang
 * [Thomas Huang](https://github.com/thomasehuang)
 * [Anton Yang](https://github.com/theunderpaidone)
