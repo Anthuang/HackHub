@@ -143,103 +143,103 @@ window.onload = function() {
 				});
 			}, false);
     // console.log(snapshot.key);
-    // user_li.innerHTML = "<h1>" + title + "</h1>\n<h3>" + text + "</h3>\n<h4>Tags: " + tags_string + "</h4>";
-    // var but = document.createElement("button");
-    // but.addEventListener('click', function(e) {
-    // 	remove_post(snap.key);
-    // 	e.stopPropagation();
-    // }, false);
-    // but.className += "remove_post";
-    // but.innerHTML = "<i class='fa fa-times' aria-hidden='true'></i>";
-    // user_li.appendChild(but);
-    // document.getElementById("user").insertBefore(user_li, document.getElementById("user").firstChild);
+    user_li.innerHTML = "<h1>" + title + "</h1>\n<h3>" + text + "</h3>\n<h4>Tags: " + tags_string + "</h4>";
+    var but = document.createElement("button");
+    but.addEventListener('click', function(e) {
+    	remove_post(snap.key);
+    	e.stopPropagation();
+    }, false);
+    but.className += "remove_post";
+    but.innerHTML = "<i class='fa fa-times' aria-hidden='true'></i>";
+    user_li.appendChild(but);
+    document.getElementById("user").insertBefore(user_li, document.getElementById("user").firstChild);
   });
 		
-		var user_li = document.createElement("li");
-		firebase.database().ref("Posts").orderByChild("user").equalTo(curr_user).on("child_added", function(snapshot) {
-			console.log(snapshot.child("user").val());
-			var tags = snapshot.child("tags").val();
-			var tags_string = "";
-			for (var i = 0; i < snapshot.child("tags").numChildren() - 1; i++) {
-				tags_string += data[snapshot.child("tags").child(i).val()]['text'] + ", ";
-			}
-			if (snapshot.child("tags").numChildren() > 0) {
-				tags_string += data[snapshot.child("tags").child(snapshot.child("tags").numChildren() - 1).val()]['text'];
-			}
-			// console.log(snapshot.val());
-			var commentHTML = document.getElementById("comment");
-			var commentTA = document.getElementById("comment_text");
-			user_li.addEventListener('click', function(e) {
-				commentHTML.innerHTML = "";
-				commentTA.value = "";
-				window.scrollTo(0, 0);
-				document.getElementById("msg_info_title").innerHTML = snapshot.child("title").val();
-				document.getElementById("msg_info_text").innerHTML = snapshot.child("text").val();
-				document.getElementById("msg_info").style.display = "block";
-				outer_wrap.style.webkitFilter = "blur(3px)";
-				document.getElementById("post_id").value = snapshot.key;
-				//
-				firebase.database().ref("Comments").off();
-				firebase.database().ref("Comments").orderByChild("post").equalTo(snapshot.key).on("child_added", function(snapshot) {
-					commentHTML.innerHTML += "<li><h3>" + snapshot.child("comment").val() + "</h3></li>";
-				});
-			}, false);
-			// console.log(snapshot.key);
-			user_li.innerHTML = "<h1>" + snapshot.child("title").val() + "</h1>\n<h3>" + snapshot.child("text").val() + "</h3>\n<h4>Tags: " + tags_string + "</h4><button onclick='remove_post(\"" + snapshot.key + "\")' value='" + snapshot.key + "' class='remove_post'><i class='fa fa-times' aria-hidden='true'></i></button>";
-			document.getElementById("user").insertBefore(user_li, document.getElementById("user").firstChild);
-		});
+		// var user_li = document.createElement("li");
+		// firebase.database().ref("Posts").orderByChild("user").equalTo(curr_user).on("child_added", function(snapshot) {
+		// 	console.log(snapshot.child("user").val());
+		// 	var tags = snapshot.child("tags").val();
+		// 	var tags_string = "";
+		// 	for (var i = 0; i < snapshot.child("tags").numChildren() - 1; i++) {
+		// 		tags_string += data[snapshot.child("tags").child(i).val()]['text'] + ", ";
+		// 	}
+		// 	if (snapshot.child("tags").numChildren() > 0) {
+		// 		tags_string += data[snapshot.child("tags").child(snapshot.child("tags").numChildren() - 1).val()]['text'];
+		// 	}
+		// 	// console.log(snapshot.val());
+		// 	var commentHTML = document.getElementById("comment");
+		// 	var commentTA = document.getElementById("comment_text");
+		// 	user_li.addEventListener('click', function(e) {
+		// 		commentHTML.innerHTML = "";
+		// 		commentTA.value = "";
+		// 		window.scrollTo(0, 0);
+		// 		document.getElementById("msg_info_title").innerHTML = snapshot.child("title").val();
+		// 		document.getElementById("msg_info_text").innerHTML = snapshot.child("text").val();
+		// 		document.getElementById("msg_info").style.display = "block";
+		// 		outer_wrap.style.webkitFilter = "blur(3px)";
+		// 		document.getElementById("post_id").value = snapshot.key;
+		// 		//
+		// 		firebase.database().ref("Comments").off();
+		// 		firebase.database().ref("Comments").orderByChild("post").equalTo(snapshot.key).on("child_added", function(snapshot) {
+		// 			commentHTML.innerHTML += "<li><h3>" + snapshot.child("comment").val() + "</h3></li>";
+		// 		});
+		// 	}, false);
+		// 	// console.log(snapshot.key);
+		// 	user_li.innerHTML = "<h1>" + snapshot.child("title").val() + "</h1>\n<h3>" + snapshot.child("text").val() + "</h3>\n<h4>Tags: " + tags_string + "</h4><button onclick='remove_post(\"" + snapshot.key + "\")' value='" + snapshot.key + "' class='remove_post'><i class='fa fa-times' aria-hidden='true'></i></button>";
+		// 	document.getElementById("user").insertBefore(user_li, document.getElementById("user").firstChild);
+		// });
 
 
 
-			var tag_li = document.createElement("li");
-			firebase.database().ref("Posts").on("child_added", function(snapshot) {
-				console.log(snapshot.child("user").val());
-				var current_user_company;
-				firebase.database().ref("Users/" + curr_user + "/company").once("value", function(snap) {
-						current_user_company = snap.val();
-						checkRest(snapshot, current_user_company);
-					});
-			});
-				function checkRest(snapshot, current_user_company) {
-					var tags = snapshot.child("tags").val();
-					var tags_string = "";
-					var is_tagged = false;
-					for (var i = 0; i < snapshot.child("tags").numChildren() - 1; i++) {
-						if(current_user_company == data[snapshot.child("tags").child(i).val()]['text']) {
-							is_tagged = true;
-						}
-						tags_string += data[snapshot.child("tags").child(i).val()]['text'] + ", ";
-					}
-					if (snapshot.child("tags").numChildren() > 0) {
-						if(current_user_company == data[snapshot.child("tags").child(snapshot.child("tags").numChildren() - 1).val()]['text']) {
-							is_tagged = true;
-						}
-						tags_string += data[snapshot.child("tags").child(snapshot.child("tags").numChildren() - 1).val()]['text'];
-					}
-					// console.log(snapshot.val());
-					var commentHTML = document.getElementById("comment");
-					var commentTA = document.getElementById("comment_text");
-					tag_li.addEventListener('click', function(e) {
-						commentHTML.innerHTML = "";
-						commentTA.value = "";
-						window.scrollTo(0, 0);
-						document.getElementById("msg_info_title").innerHTML = snapshot.child("title").val();
-						document.getElementById("msg_info_text").innerHTML = snapshot.child("text").val();
-						document.getElementById("msg_info").style.display = "block";
-						outer_wrap.style.webkitFilter = "blur(3px)";
-						document.getElementById("post_id").value = snapshot.key;
-						//
-						firebase.database().ref("Comments").off();
-						firebase.database().ref("Comments").orderByChild("post").equalTo(snapshot.key).on("child_added", function(snapshot) {
-							commentHTML.innerHTML += "<li><h3>" + snapshot.child("comment").val() + "</h3></li>";
-						});
-					}, false);
-				// console.log(snapshot.key);
-					tag_li.innerHTML = "<h1>" + snapshot.child("title").val() + "</h1>\n<h3>" + snapshot.child("text").val() + "</h3>\n<h4>Tags: " + tags_string + "</h4><button onclick='remove_post(\"" + snapshot.key + "\")' value='" + snapshot.key + "' class='remove_post'><i class='fa fa-times' aria-hidden='true'></i></button>";
-					if(tag_li.innerHTML != user_li.innerHTML) {
-						document.getElementById("user").insertBefore(tag_li, document.getElementById("user").firstChild);
-					}
-			}
+			// var tag_li = document.createElement("li");
+			// firebase.database().ref("Posts").on("child_added", function(snapshot) {
+			// 	console.log(snapshot.child("user").val());
+			// 	var current_user_company;
+			// 	firebase.database().ref("Users/" + curr_user + "/company").once("value", function(snap) {
+			// 			current_user_company = snap.val();
+			// 			checkRest(snapshot, current_user_company);
+			// 		});
+			// });
+			// 	function checkRest(snapshot, current_user_company) {
+			// 		var tags = snapshot.child("tags").val();
+			// 		var tags_string = "";
+			// 		var is_tagged = false;
+			// 		for (var i = 0; i < snapshot.child("tags").numChildren() - 1; i++) {
+			// 			if(current_user_company == data[snapshot.child("tags").child(i).val()]['text']) {
+			// 				is_tagged = true;
+			// 			}
+			// 			tags_string += data[snapshot.child("tags").child(i).val()]['text'] + ", ";
+			// 		}
+			// 		if (snapshot.child("tags").numChildren() > 0) {
+			// 			if(current_user_company == data[snapshot.child("tags").child(snapshot.child("tags").numChildren() - 1).val()]['text']) {
+			// 				is_tagged = true;
+			// 			}
+			// 			tags_string += data[snapshot.child("tags").child(snapshot.child("tags").numChildren() - 1).val()]['text'];
+			// 		}
+			// 		// console.log(snapshot.val());
+			// 		var commentHTML = document.getElementById("comment");
+			// 		var commentTA = document.getElementById("comment_text");
+			// 		tag_li.addEventListener('click', function(e) {
+			// 			commentHTML.innerHTML = "";
+			// 			commentTA.value = "";
+			// 			window.scrollTo(0, 0);
+			// 			document.getElementById("msg_info_title").innerHTML = snapshot.child("title").val();
+			// 			document.getElementById("msg_info_text").innerHTML = snapshot.child("text").val();
+			// 			document.getElementById("msg_info").style.display = "block";
+			// 			outer_wrap.style.webkitFilter = "blur(3px)";
+			// 			document.getElementById("post_id").value = snapshot.key;
+			// 			//
+			// 			firebase.database().ref("Comments").off();
+			// 			firebase.database().ref("Comments").orderByChild("post").equalTo(snapshot.key).on("child_added", function(snapshot) {
+			// 				commentHTML.innerHTML += "<li><h3>" + snapshot.child("comment").val() + "</h3></li>";
+			// 			});
+			// 		}, false);
+			// 	// console.log(snapshot.key);
+			// 		tag_li.innerHTML = "<h1>" + snapshot.child("title").val() + "</h1>\n<h3>" + snapshot.child("text").val() + "</h3>\n<h4>Tags: " + tags_string + "</h4><button onclick='remove_post(\"" + snapshot.key + "\")' value='" + snapshot.key + "' class='remove_post'><i class='fa fa-times' aria-hidden='true'></i></button>";
+			// 		if(tag_li.innerHTML != user_li.innerHTML) {
+			// 			document.getElementById("user").insertBefore(tag_li, document.getElementById("user").firstChild);
+			// 		}
+			// }
 			 
  // console.log(window.user);
   // console.log(window.user);
