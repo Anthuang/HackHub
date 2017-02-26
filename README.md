@@ -15,7 +15,7 @@ Moving on to the messages. Every message is added by some user, either a hacker 
 Clicking on the messages will bring up a more detailed page for the specific message. This will also bring up a comment section, which is where mentors would help hackers. This allows mentors to help hackers over long distances.
 
 ## Build Instructions
-HackHub is a web based platform, so hosting this repo on a server is the first step. Firebase also needs to initialized with credentials, so the following code in [firebase_init.js](firebase_init.js) must be edited:
+HackHub is a web based platform, so hosting this repo on a server is the first step. Simply clone this repo and host it online. Firebase also needs to initialized with credentials, so the following code in [firebase_init.js](firebase_init.js) must be edited:
 
 ```javascript
 (function() {
@@ -45,17 +45,7 @@ compass watch
 Now your changes will cause Compass to compile your SASS directory on save.
 
 ## Contributors Guide
-Due to the short nature of hackathons and too much junk food, our quality of the code may be lacking in certain areas. We will try our best to maintain HackHub, so contributions are very welcome. We welcome contributions in any form, but value bug fixes the most. See **Known Issues** and **Possible Extensions** for more ideas.
-
-### Known Issues
-We will compile a list of known issues here as they come up.
-
-### Possible Extensions
-* Maps could be included to make meetings easier to locate.
-* Filter options for the user to re-order messages on the home screen.
-* Pinned notifications that act as a constant reminder.
-* Queue of hackers waiting for a certain mentor, to make it easier for mentors to find who to help next.
-* Efficiency could be a problem if the hackathon is large-scaled.
+[Here](CONTRIBUTORS.MD)
 
 ## License
 HackHub is released under the [MIT License](LICENSE).
