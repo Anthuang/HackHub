@@ -48,19 +48,24 @@ window.onload = function() {
  var curr_user;
  firebase.auth().onAuthStateChanged(user => {
  	if (user){
-		 var arr = document.getElementsByClassName("nav_el");
-	var names = ["post", "announcement", "meeting", "user"];
-	var last_active = 0;
+		 
+ 		console.log(user.uid);
+ 		curr_user = user.uid;
 
-	for (var i = arr.length-1; i >=0; --i) {
-		arr[i].onclick = function() {
-			arr[last_active].classList.remove("nav_active");
-			document.getElementById(names[last_active]).style.display = "none";
-			last_active = this.getAttribute('value');
-			document.getElementById(names[this.getAttribute('value')]).style.display = "block";
-			this.className += " nav_active";
+
+		var arr = document.getElementsByClassName("nav_el");
+		var names = ["post", "announcement", "meeting", "user"];
+		var last_active = 0;
+
+		for (var i = arr.length-1; i >=0; --i) {
+			arr[i].onclick = function() {
+				arr[last_active].classList.remove("nav_active");
+				document.getElementById(names[last_active]).style.display = "none";
+				last_active = this.getAttribute('value');
+				document.getElementById(names[this.getAttribute('value')]).style.display = "block";
+				this.className += " nav_active";
+			}
 		}
-	}
 
 	/*
 	 * Add post functionality
@@ -78,8 +83,6 @@ window.onload = function() {
 		add_wrap.style.display = "none";
 		outer_wrap.style.webkitFilter = "";
 	}
- 		console.log(user.uid);
- 		curr_user = user.uid;
 		
 		var firebase_ref = firebase.database().ref();
 		var submit = document.getElementById("add_submit");
@@ -140,16 +143,16 @@ window.onload = function() {
 				});
 			}, false);
     // console.log(snapshot.key);
-    user_li.innerHTML = "<h1>" + title + "</h1>\n<h3>" + text + "</h3>\n<h4>Tags: " + tags_string + "</h4>";
-    var but = document.createElement("button");
-    but.addEventListener('click', function(e) {
-    	remove_post(snap.key);
-    	e.stopPropagation();
-    }, false);
-    but.className += "remove_post";
-    but.innerHTML = "<i class='fa fa-times' aria-hidden='true'></i>";
-    user_li.appendChild(but);
-    document.getElementById("user").insertBefore(user_li, document.getElementById("user").firstChild);
+    // user_li.innerHTML = "<h1>" + title + "</h1>\n<h3>" + text + "</h3>\n<h4>Tags: " + tags_string + "</h4>";
+    // var but = document.createElement("button");
+    // but.addEventListener('click', function(e) {
+    // 	remove_post(snap.key);
+    // 	e.stopPropagation();
+    // }, false);
+    // but.className += "remove_post";
+    // but.innerHTML = "<i class='fa fa-times' aria-hidden='true'></i>";
+    // user_li.appendChild(but);
+    // document.getElementById("user").insertBefore(user_li, document.getElementById("user").firstChild);
   });
 		
 		var user_li = document.createElement("li");
