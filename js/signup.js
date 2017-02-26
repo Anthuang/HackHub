@@ -41,5 +41,5 @@ signup.addEventListener('click', e => {
           company: name_in,
       });
     }
-    window.location.replace("index.html");
+    window.location.replace("main.html");
 });

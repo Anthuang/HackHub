@@ -1,3 +1,7 @@
+a {
+	color: $main_accent;
+}
+
 #logo {
 	display: table;
 	margin: auto;
@@ -26,11 +30,12 @@
 	outline: none;
 }
 
-#login {
+.log_button {
 	height: $msg_height / 2;
 	width: 30%;
 	display: block;
 	margin: auto;
+	margin-bottom: $comment_spacing;
 	padding: 0 $comment_padding;
 
 	font-size: $font2;
@@ -45,7 +50,7 @@
 	background: none;
 }
 
-#login:hover {
+.log_button:hover {
 	background: $nav_bar;
 }
 
