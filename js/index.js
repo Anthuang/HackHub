@@ -48,7 +48,7 @@ window.onload = function() {
  	// 	console.log(user.uid);
  		curr_user = user.uid;
  	} else {
- 		window.location.replace("login.html");
+ 		window.location.replace("index.html");
  	}
  });
  // console.log(window.user);
