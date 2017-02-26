@@ -37,7 +37,7 @@ window.onload = function() {
 	var curr_user;
 	firebase.auth().onAuthStateChanged(user => {
 		if(user){
-			curr_user = user;
+			curr_user = user.uid;
 		} else {
 			window.location.replace("login.html");
 		}
@@ -96,7 +96,7 @@ window.onload = function() {
 	    text: add_text,
 	    select: add_select,
 			tags: add_tags,
-			user: curr_user.uid,
+			user: curr_user,
 	  });
 
 	  // Clear
@@ -163,6 +163,28 @@ window.onload = function() {
     var commentHTML = document.getElementById("comment");
     var commentTA = document.getElementById("comment_text");
 
+		/********************************************************/
+		var posts_ref = firebase.database().ref("Posts");
+		posts_ref.orderByChild("user").equalTo(snap.child("user").val()).on("child_added",
+		function(snapshot) {
+			var new_msg = document.createElement("li");
+			new_msg.addEventListener('click', function(e) {
+        commentHTML.innerHTML = "";
+        commentTA.value = "";
+				window.scrollTo(0, 0);
+				document.getElementById("msg_info_title").innerHTML = title;
+				document.getElementById("msg_info_text").innerHTML = text;
+				document.getElementById("msg_info_return").style.display = "block";
+				document.getElementById("add").style.display = "none";
+				document.getElementById("outer_wrap").style.right = "100%";
+				document.getElementById("msg_info").style.left = "0";
+        document.getElementById("post_id").value = snap.key;
+			}, false);
+			new_msg.innerHTML = "<h1>" + title + "</h1>\n<h3>" + text + "</h3>\n<h4>Tags: " + tags_string + "</h4><button onclick='remove_post(\"" + snap.key + "\")' value='" + snap.key + "' class='remove_post'><i class='fa fa-times' aria-hidden='true'></i></button>";
+			document.getElementById("user").insertBefore(new_msg, document.getElementById("user").firstChild);
+		});
+		/***********************************************************/
+
 		if (select != "post") {
 			var new_msg = document.createElement("li");
 			new_msg.addEventListener('click', function(e) {
@@ -206,6 +228,8 @@ window.onload = function() {
 	});
 
 
+
+
 	var logout = document.getElementById("logout");
 	logout.addEventListener('click', e => {
 		firebase.auth().signOut();
@@ -220,5 +244,7 @@ window.onload = function() {
 		document.getElementById("add").style.display = "block";
 		document.getElementById("outer_wrap").style.right = "0";
 		document.getElementById("msg_info").style.left = "100%";
-	}
+	};
+
 }
+
