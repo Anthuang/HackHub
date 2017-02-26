@@ -54,7 +54,7 @@ Due to the short nature of hackathons and too much junk food, our quality of the
 See how to contribute [here](CONTRIBUTING.MD)
 
 ### Known Issues
-We will compile a list of known issues here as they come up.
+We will compile a list of known issues in the issue tracker.
 
 ### Possible Extensions
 * Maps could be included to make meetings easier to locate.
