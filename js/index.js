@@ -130,7 +130,7 @@ window.onload = function() {
     commentHTML.innerHTML = "";
     for (var key in comments) {
       firebase_ref.child("Comments").child(key).child("comment").once('value').then(function(snapshot) {
-        commentHTML.innerHTML += snapshot.val() + "<br>";
+        commentHTML.innerHTML += "<li><h3>" + snapshot.val() + "</h3></li>";
       });
     }
   }
@@ -193,6 +193,7 @@ window.onload = function() {
 	 */
 	document.getElementById("msg_info_return").onclick = function() {
 		this.style.display = "none";
+		window.scrollTo(0, 0);
 		document.getElementById("add").style.display = "block";
 		document.getElementById("outer_wrap").style.right = "0";
 		document.getElementById("msg_info").style.left = "100%";

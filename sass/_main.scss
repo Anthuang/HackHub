@@ -223,7 +223,7 @@ nav > div:hover {
 	width: 100%;
 	height: 100%;
 	left: 100%;
-	position: fixed;
+	position: absolute;
 
 	color: $main_accent;
 
@@ -246,8 +246,8 @@ nav > div:hover {
 }
 
 #comment li {
-	height: $msg_height;
-	padding: $msg_padding;
+	height: $comment_height;
+	padding: $comment_padding;
 	border-top: 1px solid $main_accent;
 	position: relative;
 
@@ -284,6 +284,7 @@ nav > div:hover {
 	height: $add_submit_height;
 	margin: auto;
 	margin-top: $comment_spacing;
+	margin-bottom: $comment_spacing * 3;
 	display: block;
 
 	font-size: $font2;
