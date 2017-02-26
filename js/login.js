@@ -1,5 +1,4 @@
 var login = document.getElementById("login");
-var signup = document.getElementById("signup");
 
 var curr_user;
 
@@ -15,40 +14,16 @@ firebase.auth().onAuthStateChanged(user => {
 login.addEventListener('click', e =>{
     var email = document.getElementById("email").value;
     var password = document.getElementById("password").value;
+    var no_error = true;
     firebase.auth().signInWithEmailAndPassword(email, password)
     .catch(function(error) {
         alert(error.message);
+        no_error = false;
     });
     console.log("account logged in");
     document.getElementById("email").value = "";
     document.getElementById("password").value = "";
-    window.location.replace("index.html");
+    if(no_error) {
+        window.location.replace("index.html");
+    }
 });
-
-signup.addEventListener('click', e => {
-    var email = document.getElementById("email").value;
-    var password = document.getElementById("password").value;
-    var mentor_status = document.getElementById("mentor").checked;
-    console.log(mentor_status);
-    firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
-        // Handle Errors here.
-        var errorCode = error.code;
-        var errorMessage = error.message;
-        // [START_EXCLUDE]
-        if (errorCode == 'auth/weak-password') {
-        alert('The password is too weak.');
-        } else {
-        alert(errorMessage);
-        }
-        console.log(error);
-        // [END_EXCLUDE]
-    });
-    // [END createwithemail]
-    var firebase_ref = firebase.database().ref();
-    firebase_ref.child("Users").child(curr_user).set({
-        mentor: mentor_status
-    });
-    window.location.replace("index.html");
-});
-
-
