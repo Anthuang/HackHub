@@ -374,6 +374,15 @@ nav div:hover {
 	color: #main_accent !important;
 }
 
+// Message variants
+.announce_li {
+	background: $announce_back;
+}
+
+.meeting_li {
+	background: $meeting_back;
+}
+
 @media only screen and ($tablet) {
 	h1 {
 		font-size: $font1 * $tablet_scale;

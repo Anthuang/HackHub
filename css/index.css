@@ -390,112 +390,122 @@ nav div:hover {
   color: #main_accent !important;
 }
 
+/* line 378, ../sass/_main.scss */
+.announce_li {
+  background: #f00;
+}
+
+/* line 382, ../sass/_main.scss */
+.meeting_li {
+  background: #0f0;
+}
+
 @media only screen and (max-width: 959px) {
-  /* line 378, ../sass/_main.scss */
+  /* line 387, ../sass/_main.scss */
   h1 {
     font-size: 24px;
   }
 
-  /* line 381, ../sass/_main.scss */
+  /* line 390, ../sass/_main.scss */
   h2 {
     font-size: 18px;
   }
 
-  /* line 384, ../sass/_main.scss */
+  /* line 393, ../sass/_main.scss */
   h3 {
     font-size: 13.5px;
   }
 
-  /* line 387, ../sass/_main.scss */
+  /* line 396, ../sass/_main.scss */
   h4 {
     font-size: 11.25px;
   }
 
-  /* line 390, ../sass/_main.scss */
+  /* line 399, ../sass/_main.scss */
   h5 {
     font-size: 9.75px;
   }
 
-  /* line 393, ../sass/_main.scss */
+  /* line 402, ../sass/_main.scss */
   h6 {
     font-size: 7.5px;
   }
 
-  /* line 397, ../sass/_main.scss */
+  /* line 406, ../sass/_main.scss */
   #add_wrap > div {
     min-height: 450px;
     padding: 22.5px;
   }
 
-  /* line 402, ../sass/_main.scss */
+  /* line 411, ../sass/_main.scss */
   .circle_button {
     right: 37.5px;
     bottom: 37.5px;
     font-size: 48px !important;
   }
 
-  /* line 409, ../sass/_main.scss */
+  /* line 418, ../sass/_main.scss */
   #main ul li {
     height: 75px;
     padding: 15px;
   }
 
-  /* line 414, ../sass/_main.scss */
+  /* line 423, ../sass/_main.scss */
   #msg_info_wrap {
     padding: 22.5px;
   }
 }
 @media only screen and (max-width: 519px) {
-  /* line 420, ../sass/_main.scss */
+  /* line 429, ../sass/_main.scss */
   h1 {
     font-size: 16px;
   }
 
-  /* line 423, ../sass/_main.scss */
+  /* line 432, ../sass/_main.scss */
   h2 {
     font-size: 12px;
   }
 
-  /* line 426, ../sass/_main.scss */
+  /* line 435, ../sass/_main.scss */
   h3 {
     font-size: 9px;
   }
 
-  /* line 429, ../sass/_main.scss */
+  /* line 438, ../sass/_main.scss */
   h4 {
     font-size: 7.5px;
   }
 
-  /* line 432, ../sass/_main.scss */
+  /* line 441, ../sass/_main.scss */
   h5 {
     font-size: 6.5px;
   }
 
-  /* line 435, ../sass/_main.scss */
+  /* line 444, ../sass/_main.scss */
   h6 {
     font-size: 5px;
   }
 
-  /* line 439, ../sass/_main.scss */
+  /* line 448, ../sass/_main.scss */
   #add_wrap > div {
     min-height: 300px;
     padding: 15px;
   }
 
-  /* line 444, ../sass/_main.scss */
+  /* line 453, ../sass/_main.scss */
   .circle_button {
     right: 25px;
     bottom: 25px;
     font-size: 32px !important;
   }
 
-  /* line 451, ../sass/_main.scss */
+  /* line 460, ../sass/_main.scss */
   #main ul li {
     height: 50px;
     padding: 10px;
   }
 
-  /* line 456, ../sass/_main.scss */
+  /* line 465, ../sass/_main.scss */
   #msg_info_wrap {
     padding: 15px;
   }
