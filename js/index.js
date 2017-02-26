@@ -85,7 +85,7 @@ window.onload = function() {
 	    text: add_text,
 	    select: add_select,
 			tags: add_tags,
-			user: curr_user.uid,
+			// user: curr_user.uid,
 			comments: "",
 	  });
 
