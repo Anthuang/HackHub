@@ -166,26 +166,24 @@ window.onload = function() {
     var commentTA = document.getElementById("comment_text");
 
 		/********************************************************/
-		
-		/***********************************************************/
-		// var company_tags = document.createElement("li")
-		// posts_ref.orderByChild("user").equalTo(snap.child("tags").val()).on("child_added",
-		// function(snapshot) {
-		// 	user_li.addEventListener('click', function(e) {
-    //     commentHTML.innerHTML = "";
-    //     commentTA.value = "";
-		// 		window.scrollTo(0, 0);
-		// 		document.getElementById("msg_info_title").innerHTML = title;
-		// 		document.getElementById("msg_info_text").innerHTML = text;
-		// 		document.getElementById("msg_info_return").style.display = "block";
-		// 		document.getElementById("add").style.display = "none";
-		// 		document.getElementById("outer_wrap").style.right = "100%";
-		// 		document.getElementById("msg_info").style.left = "0";
-    //     document.getElementById("post_id").value = snap.key;
-		// 	}, false);
-		// 	user_li.innerHTML = "<h1>" + title + "</h1>\n<h3>" + text + "</h3>\n<h4>Tags: " + tags_string + "</h4><button onclick='remove_post(\"" + snap.key + "\")' value='" + snap.key + "' class='remove_post'><i class='fa fa-times' aria-hidden='true'></i></button>";
-		// 	document.getElementById("user").insertBefore(user_li, document.getElementById("user").firstChild);
-		// });
+
+		var posts_ref = firebase.database().ref("Posts");
+		var user_li = document.createElement("li");
+		posts_ref.orderByChild("user").equalTo(snap.child("user").val()).on("child_added",
+		function(snapshot) {
+			user_li.addEventListener('click', function(e) {
+        commentHTML.innerHTML = "";
+        commentTA.value = "";
+				window.scrollTo(0, 0);
+				document.getElementById("msg_info_title").innerHTML = title;
+				document.getElementById("msg_info_text").innerHTML = text;
+				document.getElementById("msg_info").style.display = "block";
+				outer_wrap.style.webkitFilter = "blur(3px)";
+        document.getElementById("post_id").value = snap.key;
+			}, false);
+			user_li.innerHTML = "<h1>" + title + "</h1>\n<h3>" + text + "</h3>\n<h4>Tags: " + tags_string + "</h4><button onclick='remove_post(\"" + snap.key + "\")' value='" + snap.key + "' class='remove_post'><i class='fa fa-times' aria-hidden='true'></i></button>";
+			document.getElementById("user").insertBefore(user_li, document.getElementById("user").firstChild);
+		});
 		/***********************************************************/
 
 		if (select != "post") {
@@ -196,10 +194,8 @@ window.onload = function() {
 				window.scrollTo(0, 0);
 				document.getElementById("msg_info_title").innerHTML = title;
 				document.getElementById("msg_info_text").innerHTML = text;
-				document.getElementById("msg_info_return").style.display = "block";
-				document.getElementById("add").style.display = "none";
-				document.getElementById("outer_wrap").style.right = "100%";
-				document.getElementById("msg_info").style.left = "0";
+				document.getElementById("msg_info").style.display = "block";
+				outer_wrap.style.webkitFilter = "blur(3px)";
         document.getElementById("post_id").value = snap.key;
         // update_comments(snap);
         // firebase.database().ref("Comments").orderByChild("post").equalTo(snap.key).on("child_added", function(snapshot) {
@@ -216,10 +212,8 @@ window.onload = function() {
 			window.scrollTo(0, 0);
 			document.getElementById("msg_info_title").innerHTML = title;
 			document.getElementById("msg_info_text").innerHTML = text;
-			document.getElementById("msg_info_return").style.display = "block";
-			document.getElementById("add").style.display = "none";
-			document.getElementById("outer_wrap").style.right = "100%";
-			document.getElementById("msg_info").style.left = "0";
+			document.getElementById("msg_info").style.display = "block";
+			outer_wrap.style.webkitFilter = "blur(3px)";
       document.getElementById("post_id").value = snap.key;
       // update_comments(snap);
       firebase.database().ref("Comments").orderByChild("post").equalTo(snap.key).on("child_added", function(snapshot) {
@@ -227,7 +221,6 @@ window.onload = function() {
       });
 		}, false);
 		new_msg.innerHTML = "<h1>" + title + "</h1>\n<h3>" + text + "</h3>\n<h4>Tags: " + tags_string + "<button onclick='remove_post(\"" + snap.key + "\")' value='" + snap.key + "' class='remove_post'><i class='fa fa-times' aria-hidden='true'></i></button>";
-<<<<<<< HEAD
 		document.getElementById("post").insertBefore(new_msg, document.getElementById("post").firstChild);
 
 				/********************************************************/
@@ -252,10 +245,6 @@ window.onload = function() {
 			document.getElementById("user").insertBefore(user_li, document.getElementById("user").firstChild);
 		});
 		/***********************************************************/
-=======
-    new_msg.id = snap.key;
-    document.getElementById("post").insertBefore(new_msg, document.getElementById("post").firstChild);
->>>>>>> 29375ca746b2d419c65b9e25f1dd2e54e08371d5
 	});
 
   firebase_ref.child("Posts").on('child_removed', snap => {
@@ -271,11 +260,9 @@ window.onload = function() {
 	 * Shifting return
 	 */
 	document.getElementById("msg_info_return").onclick = function() {
-		this.style.display = "none";
+		document.getElementById("msg_info").style.display = "none";
+		outer_wrap.style.webkitFilter = "";
 		window.scrollTo(0, 0);
-		document.getElementById("add").style.display = "block";
-		document.getElementById("outer_wrap").style.right = "0";
-		document.getElementById("msg_info").style.left = "100%";
 	};
 
 }

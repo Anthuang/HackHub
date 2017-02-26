@@ -2,6 +2,8 @@
 <html>
 <head>
 	<meta charset=utf-8 />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
 	<!-- jQuery -->
 	<script src="js/jquery-3.1.1.min.js"></script>
 
@@ -25,18 +27,18 @@
 <body>
 	<!-- Detailed message info -->
 	<div id="msg_info">
-		<div id="msg_info_wrap">
-			<h1 id="msg_info_title">Loading...</h1>
-			<h3 id="msg_info_text">Loading...</h3>
+		<div>
+			<div id="msg_info_wrap">
+				<h1 id="msg_info_title">Loading...</h1>
+				<h3 id="msg_info_text">Loading...</h3>
+			</div>
+			<input type="hidden" id="post_id">
+			<ul id="comment"></ul>
+			<textarea id="comment_text" placeholder="Comment"></textarea>
+			<button id="comment_submit">SUBMIT</button>
+			<i id="msg_info_return" class="fa fa-reply circle_button" aria-hidden="true"></i>
 		</div>
-		<input type="hidden" id="post_id">
-		<ul id="comment"></ul>
-		<textarea id="comment_text" placeholder="Comment"></textarea>
-		<button id="comment_submit">SUBMIT</button>
 	</div>
-	
-	<!-- Return icon -->
-	<i id="msg_info_return" class="fa fa-reply circle_button" aria-hidden="true"></i>
 
 	<!-- Adding new messages -->
 	<div id="add_wrap">
@@ -60,9 +62,7 @@
 
 	<!-- Wraps main content -->
 	<div id="outer_wrap">
-		<!-- Put the plus button in here to get the blur on it-->
 		<i id="add" class="fa fa-plus-circle circle_button" aria-hidden="true"></i>
-		
 		<!-- Navigation -->
 		<nav id="header">
 			<div value="0" class="nav_el nav_active"><h3 class="nav_text">Home</h3><h3><i class="fa fa-home nav_icon" aria-hidden="true"></i></h3></div>

@@ -16,7 +16,7 @@ $main_hover: #77aac5;
 
 // Hovers
 $nav_hover: $main;
-$msg_hover: $nav_bar;
+$msg_hover: #5b9ebd;
 
 // Shadows
 $add_base: #555;
@@ -46,6 +46,10 @@ $add_form_padding: 30px;
 $add_input_padding: 10px;
 $msg_info_padding: 30px;
 $comment_spacing: 20px;
+
+// Scaling
+$tablet_scale: 0.75;
+$mobile_scale: 0.50;
 
 // Font sizes
 $font1: 32px;
