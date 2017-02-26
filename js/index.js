@@ -368,6 +368,13 @@ window.onload = function() {
       document.getElementById(select).insertBefore(new_msg, document.getElementById(select).firstChild);
 		}
 		var new_msg = document.createElement("li");
+		if (select == "announcement") {
+			new_msg.className += "announce_li";
+		} else if (select == "meeting") {
+			new_msg.className += "meeting_li";
+		} else {
+			new_msg.className = "";
+		}
 		new_msg.addEventListener('click', function(e) {
       commentHTML.innerHTML = "";
       commentTA.value = "";
