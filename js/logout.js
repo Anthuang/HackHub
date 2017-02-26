@@ -7,6 +7,6 @@ firebase.auth().onAuthStateChanged(user => {
     if(user){
         var curr_user = firebase.auth().currentUser;
     } else {
-        window.location.replace("login.html")
+        //window.location.replace("login.html")
     }
 });
