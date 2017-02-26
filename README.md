@@ -47,11 +47,11 @@ compass watch
 Now your changes will cause Compass to compile your SASS directory on save.
 
 ## Contributors Guide
-[List of contributors](CONTRIBUTORS.MD)
+[List of contributors](CONTRIBUTORS.md)
 
 Due to the short nature of hackathons and too much junk food, our quality of the code may be lacking in certain areas. We will try our best to maintain HackHub, so contributions are very welcome. We welcome contributions in any form, but value bug fixes the most. See **Known Issues** and **Possible Extensions** for more ideas.
 
-See how to contribute [here](CONTRIBUTING.MD)
+See how to contribute [here](CONTRIBUTING.md)
 
 ## License
 HackHub is released under the [MIT License](LICENSE).
