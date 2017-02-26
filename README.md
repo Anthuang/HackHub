@@ -5,7 +5,7 @@ HackHub is a open source project that specifically targets hackathons. HackHub a
 
 We understand that hackathons have different requirements and style choices, so we have made the code base very easy to extend. We highly encourage hackathons to not only fork this repo and tweak our code for their own needs, but also to help extend the project for future hackathons. We will now go into details on HackHub.
 
-## Functionality
+## Usage
 Our prototype provides simple user authentication using Firebase. Users sign up and log in with their emails and their passwords.
 
 After the users are logged in, they are brought to the home screen. The home screen shows all of the messages that are on the hackathon's feed, which includes any questions, announcements, or meeting arrangements. Next to the home screen are the announcements page, the meetings page, the user page, and a logout button. The pages filter out messages that do not belong in the category, and only display messages that do. For example, the user page only shows messages that correlate to the user in some way.
@@ -14,8 +14,25 @@ Moving on to the messages. Every message is added by some user, either a hacker 
 
 Clicking on the messages will bring up a more detailed page for the specific message. This will also bring up a comment section, which is where mentors would help hackers. This allows mentors to help hackers over long distances.
 
-## Tweaking HackHub
-Tweaking HackHub is simple. Since our CSS is compiled with SASS using Compass, almost all of the values used are stored in variables in the \_globals.scss file. Tweaking HackHub is as simple as changing the variables in the file. For example, to change the navigation bar color, change the $nav_bar variable to something like:
+## Build Instructions
+HackHub is a web based platform, so hosting this repo on a server is the first step. Firebase also needs to initialized with credentials, so the following code in [firebase_init.js](firebase_init.js) must be edited:
+
+```javascript
+(function() {
+    var config = {
+    apiKey: "AIzaSyDFoH-LzsCuQzND-_74g0EA4BpYZN10tKM",
+    authDomain: "hackhub-255d7.firebaseapp.com",
+    databaseURL: "https://hackhub-255d7.firebaseio.com",
+    storageBucket: "hackhub-255d7.appspot.com",
+    messagingSenderId: "157801572889"
+    };
+    firebase.initializeApp(config);
+}());
+```
+
+These credentials can be obtained simply by registering an account and project on [Firebase](https://firebase.google.com/).
+
+Now that the server is set up, the product can already be used. It can also be tweaked to better fit the user's needs. Tweaking HackHub is simple. Since our CSS is compiled with SASS using Compass, almost all of the values used are stored in variables in the \_globals.scss file. Tweaking HackHub is as simple as changing the variables in the file. For example, to change the navigation bar color, change the $nav_bar variable to something like:
 
 ```
 $nav_bar: #ff9900;
@@ -27,13 +44,13 @@ compass watch
 ```
 Now your changes will cause Compass to compile your SASS directory on save.
 
-## Contributors
+## Contributors Guide
 Due to the short nature of hackathons and too much junk food, our quality of the code may be lacking in certain areas. We will try our best to maintain HackHub, so contributions are very welcome. We welcome contributions in any form, but value bug fixes the most. See **Known Issues** and **Possible Extensions** for more ideas.
 
-## Known Issues
-We will compile a list of known issues here.
+### Known Issues
+We will compile a list of known issues here as they come up.
 
-## Possible Extensions
+### Possible Extensions
 * Maps could be included to make meetings easier to locate.
 * Filter options for the user to re-order messages on the home screen.
 * Pinned notifications that act as a constant reminder.
