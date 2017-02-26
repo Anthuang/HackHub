@@ -16,14 +16,14 @@ login.addEventListener('click', e =>{
     var password = document.getElementById("password").value;
     var no_error = true;
     firebase.auth().signInWithEmailAndPassword(email, password)
+    .then(function() {
+        console.log("account logged in");
+        document.getElementById("email").value = "";
+        document.getElementById("password").value = "";
+        window.location.replace("index.html");
+    })
     .catch(function(error) {
         alert(error.message);
         no_error = false;
-    });
-    console.log("account logged in");
-    document.getElementById("email").value = "";
-    document.getElementById("password").value = "";
-    if(no_error) {
-        window.location.replace("index.html");
-    }
+    }); 
 });

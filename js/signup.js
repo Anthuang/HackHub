@@ -31,8 +31,8 @@ signup.addEventListener('click', e => {
         // [END_EXCLUDE]
     });
     // [END createwithemail]
-    var firebase_ref = firebase.database().ref();
-    firebase_ref.child("Users").child(curr_user).set({
+    var firebase_ref = firebase.database().ref("Users");
+    firebase_ref.child(curr_user).set({
         mentor: mentor_status,
         name: name_in
     });

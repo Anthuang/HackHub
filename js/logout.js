@@ -4,9 +4,10 @@ logout.addEventListener('click', e => {
 });  
 
 firebase.auth().onAuthStateChanged(user => {
+    console.log(user);
     if(user){
         var curr_user = firebase.auth().currentUser;
     } else {
-        //window.location.replace("login.html")
+        window.location.replace("login.html");
     }
 });
