@@ -97,15 +97,43 @@ window.onload = function() {
 		clearField(document.getElementById("add_tags"));
 	}
 
+  var comment_submit = document.getElementById("comment_submit");
+  comment_submit.onclick = function() {
+    var add_comment = document.getElementById("comment_text").value;
+    var post_key = document.getElementById("post_id").value;
+    var new_key = firebase_ref.child("Posts").child(post_key).child("comments").push("random_value").getKey();
+    firebase_ref.child("Comments").child(new_key).set({
+      post: post_key,
+      comment: add_comment
+    });
+  };
+
 	/*
 	 * Receiving data
 	 */
 
 	// Triggers when a value changes
 	// Receive snapshot which includes whole list of posts
-	firebase_ref.child("Posts").on('value', function(snapshot) {
-	  // console.log(snapshot.val());
+	firebase_ref.child("Comments").on('child_added', snap => {
+    var post_key = snap.child("post");
+    if (post_key.val() == document.getElementById("post_id").value) {
+      var comments = document.getElementById("comment");
+      // comments.innerHTML = "";
+      comments.innerHTML += snap.child("comment").val() + "\n";
+      // console.log(snap.val());
+    }
 	});
+
+  function update_comments(snap) {
+    var comments = snap.child("comments").val();
+    var commentHTML = document.getElementById("comment");
+    commentHTML.innerHTML = "";
+    for (var key in comments) {
+      firebase_ref.child("Comments").child(key).child("comment").once('value').then(function(snapshot) {
+        commentHTML.innerHTML += snapshot.val() + "<br>";
+      });
+    }
+  }
 
 	// Triggers when a post is added
 	// Receive a snap which is one post
@@ -132,6 +160,8 @@ window.onload = function() {
 				document.getElementById("add").style.display = "none";
 				document.getElementById("outer_wrap").style.right = "100%";
 				document.getElementById("msg_info").style.left = "0";
+        document.getElementById("post_id").value = snap.key;
+        update_comments(snap);
 			}, false);
 			new_msg.innerHTML = "<h1>" + title + "</h1>\n<h3>" + text + "</h3>\n<h4>Tags: " + tags_string + "</h4><button onclick='remove_post(\"" + snap.key + "\")' value='" + snap.key + "' class='remove_post'><i class='fa fa-times' aria-hidden='true'></i></button>";
 			document.getElementById(select).insertBefore(new_msg, document.getElementById(select).firstChild);
@@ -145,6 +175,8 @@ window.onload = function() {
 			document.getElementById("add").style.display = "none";
 			document.getElementById("outer_wrap").style.right = "100%";
 			document.getElementById("msg_info").style.left = "0";
+      document.getElementById("post_id").value = snap.key;
+      update_comments(snap);
 		}, false);
 		new_msg.innerHTML = "<h1>" + title + "</h1>\n<h3>" + text + "</h3>\n<h4>Tags: " + tags_string + "<button onclick='remove_post(\"" + snap.key + "\")' value='" + snap.key + "' class='remove_post'><i class='fa fa-times' aria-hidden='true'></i></button>";
 		document.getElementById("post").insertBefore(new_msg, document.getElementById("post").firstChild);
@@ -154,7 +186,7 @@ window.onload = function() {
 	var logout = document.getElementById("logout");
 	logout.addEventListener('click', e => {
 		firebase.auth().signOut();
-	});  
+	});
 
 	/*
 	 * Shifting return
