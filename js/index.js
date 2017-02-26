@@ -222,29 +222,6 @@ window.onload = function() {
 		}, false);
 		new_msg.innerHTML = "<h1>" + title + "</h1>\n<h3>" + text + "</h3>\n<h4>Tags: " + tags_string + "</h4><button onclick='remove_post(\"" + snap.key + "\")' value='" + snap.key + "' class='remove_post'><i class='fa fa-times' aria-hidden='true'></i></button>";
 		document.getElementById("post").insertBefore(new_msg, document.getElementById("post").firstChild);
-
-				/********************************************************/
-		var posts_ref = firebase.database().ref("Posts");
-		var user_li = document.createElement("li");
-		console.log(snap.child("user").val());
-		posts_ref.orderByChild("user").equalTo(curr_user).on("child_added",
-		function(snapshot) {
-			user_li.addEventListener('click', function(e) {
-        commentHTML.innerHTML = "";
-        commentTA.value = "";
-				window.scrollTo(0, 0);
-				document.getElementById("msg_info_title").innerHTML = title;
-				document.getElementById("msg_info_text").innerHTML = text;
-				document.getElementById("msg_info_return").style.display = "block";
-				document.getElementById("add").style.display = "none";
-				document.getElementById("outer_wrap").style.right = "100%";
-				document.getElementById("msg_info").style.left = "0";
-        document.getElementById("post_id").value = snap.key;
-			}, false);
-			user_li.innerHTML = "<h1>" + title + "</h1>\n<h3>" + text + "</h3>\n<h4>Tags: " + tags_string + "</h4><button onclick='remove_post(\"" + snap.key + "\")' value='" + snap.key + "' class='remove_post'><i class='fa fa-times' aria-hidden='true'></i></button>";
-			document.getElementById("user").insertBefore(user_li, document.getElementById("user").firstChild);
-		});
-		/***********************************************************/
 	});
 
   firebase_ref.child("Posts").on('child_removed', snap => {
