@@ -56,15 +56,16 @@ h6 {
 }
 
 .circle_button {
-	right: $add_offset;
-	bottom: $add_offset;
-	position: absolute;
 	z-index: 1;
 
 	font-size: $font1 * 2 !important;
 	cursor: pointer;
 
 	color: $add_button;
+}
+
+.circle_button:hover {
+	color: $main_accent;
 }
 
 // Add

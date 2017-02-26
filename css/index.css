@@ -72,23 +72,25 @@ h6 {
 
 /* line 58, ../sass/_main.scss */
 .circle_button {
-  right: 50px;
-  bottom: 50px;
-  position: absolute;
   z-index: 1;
   font-size: 64px !important;
   cursor: pointer;
   color: #6e7376;
 }
 
-/* line 71, ../sass/_main.scss */
+/* line 67, ../sass/_main.scss */
+.circle_button:hover {
+  color: #e9e9e9;
+}
+
+/* line 72, ../sass/_main.scss */
 #add {
   right: 50px;
   bottom: 50px;
   position: fixed;
 }
 
-/* line 77, ../sass/_main.scss */
+/* line 78, ../sass/_main.scss */
 #add_wrap {
   display: none;
   height: 100%;
@@ -97,7 +99,7 @@ h6 {
   z-index: 2;
 }
 
-/* line 85, ../sass/_main.scss */
+/* line 86, ../sass/_main.scss */
 #add_wrap > div {
   overflow-y: scroll;
   height: 80%;
@@ -112,14 +114,14 @@ h6 {
   box-shadow: 0 0 10px #555;
 }
 
-/* line 100, ../sass/_main.scss */
+/* line 101, ../sass/_main.scss */
 #add_wrap label {
   color: #e9e9e9;
   font-size: 24px;
   font-family: "Raleway", sans-serif;
 }
 
-/* line 106, ../sass/_main.scss */
+/* line 107, ../sass/_main.scss */
 #add_wrap input, #add_wrap textarea, #add_select {
   display: block;
   width: 90%;
@@ -134,14 +136,14 @@ h6 {
   background: none;
 }
 
-/* line 122, ../sass/_main.scss */
+/* line 123, ../sass/_main.scss */
 #add_wrap textarea {
   height: 100px;
   resize: none;
   font-size: 18px;
 }
 
-/* line 129, ../sass/_main.scss */
+/* line 130, ../sass/_main.scss */
 #add_submit {
   width: 80%;
   height: 40px;
@@ -152,7 +154,7 @@ h6 {
   background: #88bbd6;
 }
 
-/* line 141, ../sass/_main.scss */
+/* line 142, ../sass/_main.scss */
 #add_submit:hover {
   border: none;
   border-top: 1px solid #88bbd6;
@@ -160,7 +162,7 @@ h6 {
   background: #e9e9e9;
 }
 
-/* line 148, ../sass/_main.scss */
+/* line 149, ../sass/_main.scss */
 #add_exit {
   position: absolute;
   top: 15px;
@@ -170,7 +172,7 @@ h6 {
   color: #e9e9e9;
 }
 
-/* line 160, ../sass/_main.scss */
+/* line 161, ../sass/_main.scss */
 nav {
   height: 50px;
   width: 100%;
@@ -179,7 +181,7 @@ nav {
   font-family: "Open Sans", sans-serif;
 }
 
-/* line 169, ../sass/_main.scss */
+/* line 170, ../sass/_main.scss */
 nav div {
   height: 100%;
   display: table-cell;
@@ -190,41 +192,41 @@ nav div {
   background: #4a8dac;
 }
 
-/* line 181, ../sass/_main.scss */
+/* line 182, ../sass/_main.scss */
 nav div:hover {
   color: #e9e9e9;
   background: #88bbd6;
 }
 
-/* line 186, ../sass/_main.scss */
+/* line 187, ../sass/_main.scss */
 .nav_icon {
   display: none !important;
 }
 
 @media only screen and (max-width: 959px) {
-  /* line 191, ../sass/_main.scss */
+  /* line 192, ../sass/_main.scss */
   .nav_text {
     display: none;
   }
 
-  /* line 195, ../sass/_main.scss */
+  /* line 196, ../sass/_main.scss */
   .nav_icon {
     display: block !important;
   }
 }
-/* line 200, ../sass/_main.scss */
+/* line 201, ../sass/_main.scss */
 .nav_active {
   color: #e9e9e9;
   background: #88bbd6;
 }
 
-/* line 206, ../sass/_main.scss */
+/* line 207, ../sass/_main.scss */
 #main {
   width: 100%;
   background: #88bbd6;
 }
 
-/* line 212, ../sass/_main.scss */
+/* line 213, ../sass/_main.scss */
 #main ul li {
   height: 100px;
   padding: 20px;
@@ -235,17 +237,17 @@ nav div:hover {
   color: #e9e9e9;
 }
 
-/* line 224, ../sass/_main.scss */
+/* line 225, ../sass/_main.scss */
 #main ul li:hover {
   background: #5b9ebd;
 }
 
-/* line 228, ../sass/_main.scss */
+/* line 229, ../sass/_main.scss */
 #announcement, #meeting, #user {
   display: none;
 }
 
-/* line 232, ../sass/_main.scss */
+/* line 233, ../sass/_main.scss */
 .remove_post {
   height: 100%;
   top: 0;
@@ -258,12 +260,12 @@ nav div:hover {
   background: none;
 }
 
-/* line 246, ../sass/_main.scss */
+/* line 247, ../sass/_main.scss */
 .remove_post i:hover {
   color: #ff4c4c;
 }
 
-/* line 251, ../sass/_main.scss */
+/* line 252, ../sass/_main.scss */
 #outer_wrap {
   min-height: 100%;
   position: relative;
@@ -271,7 +273,7 @@ nav div:hover {
   transition: all 0.3s ease-out 0s;
 }
 
-/* line 259, ../sass/_main.scss */
+/* line 260, ../sass/_main.scss */
 #msg_info {
   width: 100%;
   height: 100%;
@@ -282,7 +284,7 @@ nav div:hover {
   transition: all 0.3s ease-out 0s;
 }
 
-/* line 271, ../sass/_main.scss */
+/* line 272, ../sass/_main.scss */
 #msg_info > div {
   overflow-y: scroll;
   height: 85%;
@@ -296,25 +298,25 @@ nav div:hover {
   box-shadow: 0 0 10px #555;
 }
 
-/* line 285, ../sass/_main.scss */
+/* line 286, ../sass/_main.scss */
 #msg_info_wrap {
   padding: 30px;
 }
 
-/* line 289, ../sass/_main.scss */
+/* line 290, ../sass/_main.scss */
 #msg_info_return {
   top: 15px;
   right: 15px;
   position: absolute;
 }
 
-/* line 296, ../sass/_main.scss */
+/* line 297, ../sass/_main.scss */
 #comment {
   margin-bottom: 20px;
   border-bottom: 1px solid #e9e9e9;
 }
 
-/* line 302, ../sass/_main.scss */
+/* line 303, ../sass/_main.scss */
 #comment li {
   height: 75px;
   padding: 10px;
@@ -324,14 +326,14 @@ nav div:hover {
   color: #e9e9e9;
 }
 
-/* line 313, ../sass/_main.scss */
+/* line 314, ../sass/_main.scss */
 #msg_info label {
   color: #e9e9e9;
   font-size: 24px;
   font-family: "Raleway", sans-serif;
 }
 
-/* line 319, ../sass/_main.scss */
+/* line 320, ../sass/_main.scss */
 #comment_text {
   display: block;
   width: 90%;
@@ -347,7 +349,7 @@ nav div:hover {
   resize: none;
 }
 
-/* line 336, ../sass/_main.scss */
+/* line 337, ../sass/_main.scss */
 #comment_submit {
   width: 80%;
   height: 40px;
@@ -362,7 +364,7 @@ nav div:hover {
   background: #88bbd6;
 }
 
-/* line 352, ../sass/_main.scss */
+/* line 353, ../sass/_main.scss */
 #comment_submit:hover {
   border: none;
   border-top: 1px solid #88bbd6;
@@ -370,12 +372,12 @@ nav div:hover {
   background: #e9e9e9;
 }
 
-/* line 360, ../sass/_main.scss */
+/* line 361, ../sass/_main.scss */
 .select2-selection {
   border: none;
 }
 
-/* line 364, ../sass/_main.scss */
+/* line 365, ../sass/_main.scss */
 .select2-selection--multiple {
   width: 90%;
   background: none !important;
@@ -383,117 +385,117 @@ nav div:hover {
   border-radius: 1px;
 }
 
-/* line 372, ../sass/_main.scss */
+/* line 373, ../sass/_main.scss */
 .select2-search__field {
   color: #main_accent !important;
 }
 
 @media only screen and (max-width: 959px) {
-  /* line 377, ../sass/_main.scss */
+  /* line 378, ../sass/_main.scss */
   h1 {
     font-size: 24px;
   }
 
-  /* line 380, ../sass/_main.scss */
+  /* line 381, ../sass/_main.scss */
   h2 {
     font-size: 18px;
   }
 
-  /* line 383, ../sass/_main.scss */
+  /* line 384, ../sass/_main.scss */
   h3 {
     font-size: 13.5px;
   }
 
-  /* line 386, ../sass/_main.scss */
+  /* line 387, ../sass/_main.scss */
   h4 {
     font-size: 11.25px;
   }
 
-  /* line 389, ../sass/_main.scss */
+  /* line 390, ../sass/_main.scss */
   h5 {
     font-size: 9.75px;
   }
 
-  /* line 392, ../sass/_main.scss */
+  /* line 393, ../sass/_main.scss */
   h6 {
     font-size: 7.5px;
   }
 
-  /* line 396, ../sass/_main.scss */
+  /* line 397, ../sass/_main.scss */
   #add_wrap > div {
     min-height: 450px;
     padding: 22.5px;
   }
 
-  /* line 401, ../sass/_main.scss */
+  /* line 402, ../sass/_main.scss */
   .circle_button {
     right: 37.5px;
     bottom: 37.5px;
     font-size: 48px !important;
   }
 
-  /* line 408, ../sass/_main.scss */
+  /* line 409, ../sass/_main.scss */
   #main ul li {
     height: 75px;
     padding: 15px;
   }
 
-  /* line 413, ../sass/_main.scss */
+  /* line 414, ../sass/_main.scss */
   #msg_info_wrap {
     padding: 22.5px;
   }
 }
 @media only screen and (max-width: 519px) {
-  /* line 419, ../sass/_main.scss */
+  /* line 420, ../sass/_main.scss */
   h1 {
     font-size: 16px;
   }
 
-  /* line 422, ../sass/_main.scss */
+  /* line 423, ../sass/_main.scss */
   h2 {
     font-size: 12px;
   }
 
-  /* line 425, ../sass/_main.scss */
+  /* line 426, ../sass/_main.scss */
   h3 {
     font-size: 9px;
   }
 
-  /* line 428, ../sass/_main.scss */
+  /* line 429, ../sass/_main.scss */
   h4 {
     font-size: 7.5px;
   }
 
-  /* line 431, ../sass/_main.scss */
+  /* line 432, ../sass/_main.scss */
   h5 {
     font-size: 6.5px;
   }
 
-  /* line 434, ../sass/_main.scss */
+  /* line 435, ../sass/_main.scss */
   h6 {
     font-size: 5px;
   }
 
-  /* line 438, ../sass/_main.scss */
+  /* line 439, ../sass/_main.scss */
   #add_wrap > div {
     min-height: 300px;
     padding: 15px;
   }
 
-  /* line 443, ../sass/_main.scss */
+  /* line 444, ../sass/_main.scss */
   .circle_button {
     right: 25px;
     bottom: 25px;
     font-size: 32px !important;
   }
 
-  /* line 450, ../sass/_main.scss */
+  /* line 451, ../sass/_main.scss */
   #main ul li {
     height: 50px;
     padding: 10px;
   }
 
-  /* line 455, ../sass/_main.scss */
+  /* line 456, ../sass/_main.scss */
   #msg_info_wrap {
     padding: 15px;
   }
