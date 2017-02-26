@@ -86,7 +86,6 @@ window.onload = function() {
 	    select: add_select,
 			tags: add_tags,
 			user: curr_user.uid,
-			comments: "",
 	  });
 
 	  // Clear
