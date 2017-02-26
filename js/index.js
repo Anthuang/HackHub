@@ -48,6 +48,36 @@ window.onload = function() {
  var curr_user;
  firebase.auth().onAuthStateChanged(user => {
  	if (user){
+		 var arr = document.getElementsByClassName("nav_el");
+	var names = ["post", "announcement", "meeting", "user"];
+	var last_active = 0;
+
+	for (var i = arr.length-1; i >=0; --i) {
+		arr[i].onclick = function() {
+			arr[last_active].classList.remove("nav_active");
+			document.getElementById(names[last_active]).style.display = "none";
+			last_active = this.getAttribute('value');
+			document.getElementById(names[this.getAttribute('value')]).style.display = "block";
+			this.className += " nav_active";
+		}
+	}
+
+	/*
+	 * Add post functionality
+	 */
+	
+	var add = document.getElementById("add");
+	var add_wrap = document.getElementById("add_wrap");
+	var outer_wrap = document.getElementById("outer_wrap");
+	var add_exit = document.getElementById("add_exit");
+	add.onclick = function() {
+		add_wrap.style.display = "block";
+		outer_wrap.style.webkitFilter = "blur(3px)";
+	}
+	add_exit.onclick = function() {
+		add_wrap.style.display = "none";
+		outer_wrap.style.webkitFilter = "";
+	}
  		console.log(user.uid);
  		curr_user = user.uid;
 		
@@ -212,36 +242,7 @@ window.onload = function() {
   // console.log(window.user);
   // console.log(curr_user);
 	// console.log(curr_user);
-	var arr = document.getElementsByClassName("nav_el");
-	var names = ["post", "announcement", "meeting", "user"];
-	var last_active = 0;
-
-	for (var i = arr.length-1; i >=0; --i) {
-		arr[i].onclick = function() {
-			arr[last_active].classList.remove("nav_active");
-			document.getElementById(names[last_active]).style.display = "none";
-			last_active = this.getAttribute('value');
-			document.getElementById(names[this.getAttribute('value')]).style.display = "block";
-			this.className += " nav_active";
-		}
-	}
-
-	/*
-	 * Add post functionality
-	 */
 	
-	var add = document.getElementById("add");
-	var add_wrap = document.getElementById("add_wrap");
-	var outer_wrap = document.getElementById("outer_wrap");
-	var add_exit = document.getElementById("add_exit");
-	add.onclick = function() {
-		add_wrap.style.display = "block";
-		outer_wrap.style.webkitFilter = "blur(3px)";
-	}
-	add_exit.onclick = function() {
-		add_wrap.style.display = "none";
-		outer_wrap.style.webkitFilter = "";
-	}
 
 	/*
 	 *
