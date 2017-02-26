@@ -16,6 +16,7 @@ signup.addEventListener('click', e => {
     var password = document.getElementById("password").value;
     var mentor_status = document.getElementById("mentor").checked;
     var name_in = document.getElementById("name").value;
+    var company_in = document.getElementById("company").value;
     console.log(mentor_status);
     firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
         // Handle Errors here.
@@ -34,11 +35,12 @@ signup.addEventListener('click', e => {
     var firebase_ref = firebase.database().ref("Users");
     firebase_ref.child(curr_user).set({
         mentor: mentor_status,
+        company: company_in,
         name: name_in
     });
     if (mentor_status) {
       firebase.database().ref().child("Tags").push().set({
-          company: name_in,
+          company: company_in
       });
     }
     window.location.replace("main.html");
