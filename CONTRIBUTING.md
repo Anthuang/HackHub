@@ -18,6 +18,7 @@ Examples:
 * Pinned notifications that act as a constant reminder.
 * Queue of hackers waiting for a certain mentor, to make it easier for mentors to find who to help next.
 * Efficiency could be a problem if the hackathon is large-scaled.
+* Have a way for users to see when messages are updated with new comments.
 
 ## Style Guide
 Please follow the style of the other files on this repo. Coding style is important so we will be monitoring pull requests for style too.
