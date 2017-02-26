@@ -224,11 +224,13 @@ window.onload = function() {
       });
 		}, false);
 		new_msg.innerHTML = "<h1>" + title + "</h1>\n<h3>" + text + "</h3>\n<h4>Tags: " + tags_string + "<button onclick='remove_post(\"" + snap.key + "\")' value='" + snap.key + "' class='remove_post'><i class='fa fa-times' aria-hidden='true'></i></button>";
-		document.getElementById("post").insertBefore(new_msg, document.getElementById("post").firstChild);
+    new_msg.id = snap.key;
+    document.getElementById("post").insertBefore(new_msg, document.getElementById("post").firstChild);
 	});
 
-
-
+  firebase_ref.child("Posts").on('child_removed', snap => {
+    $("#" + snap.key).remove();
+  });
 
 	var logout = document.getElementById("logout");
 	logout.addEventListener('click', e => {
@@ -247,4 +249,3 @@ window.onload = function() {
 	};
 
 }
-
