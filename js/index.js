@@ -174,10 +174,8 @@ window.onload = function() {
 				window.scrollTo(0, 0);
 				document.getElementById("msg_info_title").innerHTML = title;
 				document.getElementById("msg_info_text").innerHTML = text;
-				document.getElementById("msg_info_return").style.display = "block";
-				document.getElementById("add").style.display = "none";
-				document.getElementById("outer_wrap").style.right = "100%";
-				document.getElementById("msg_info").style.left = "0";
+				document.getElementById("msg_info").style.display = "block";
+				outer_wrap.style.webkitFilter = "blur(3px)";
         document.getElementById("post_id").value = snap.key;
 			}, false);
 			user_li.innerHTML = "<h1>" + title + "</h1>\n<h3>" + text + "</h3>\n<h4>Tags: " + tags_string + "</h4><button onclick='remove_post(\"" + snap.key + "\")' value='" + snap.key + "' class='remove_post'><i class='fa fa-times' aria-hidden='true'></i></button>";
@@ -193,10 +191,8 @@ window.onload = function() {
 				window.scrollTo(0, 0);
 				document.getElementById("msg_info_title").innerHTML = title;
 				document.getElementById("msg_info_text").innerHTML = text;
-				document.getElementById("msg_info_return").style.display = "block";
-				document.getElementById("add").style.display = "none";
-				document.getElementById("outer_wrap").style.right = "100%";
-				document.getElementById("msg_info").style.left = "0";
+				document.getElementById("msg_info").style.display = "block";
+				outer_wrap.style.webkitFilter = "blur(3px)";
         document.getElementById("post_id").value = snap.key;
         // update_comments(snap);
         // firebase.database().ref("Comments").orderByChild("post").equalTo(snap.key).on("child_added", function(snapshot) {
@@ -213,10 +209,8 @@ window.onload = function() {
 			window.scrollTo(0, 0);
 			document.getElementById("msg_info_title").innerHTML = title;
 			document.getElementById("msg_info_text").innerHTML = text;
-			document.getElementById("msg_info_return").style.display = "block";
-			document.getElementById("add").style.display = "none";
-			document.getElementById("outer_wrap").style.right = "100%";
-			document.getElementById("msg_info").style.left = "0";
+			document.getElementById("msg_info").style.display = "block";
+			outer_wrap.style.webkitFilter = "blur(3px)";
       document.getElementById("post_id").value = snap.key;
       // update_comments(snap);
       firebase.database().ref("Comments").orderByChild("post").equalTo(snap.key).on("child_added", function(snapshot) {
@@ -239,11 +233,9 @@ window.onload = function() {
 	 * Shifting return
 	 */
 	document.getElementById("msg_info_return").onclick = function() {
-		this.style.display = "none";
+		document.getElementById("msg_info").style.display = "none";
+		outer_wrap.style.webkitFilter = "";
 		window.scrollTo(0, 0);
-		document.getElementById("add").style.display = "block";
-		document.getElementById("outer_wrap").style.right = "0";
-		document.getElementById("msg_info").style.left = "100%";
 	};
 
 }

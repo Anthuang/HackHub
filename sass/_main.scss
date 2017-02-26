@@ -16,6 +16,30 @@ select {
 	color: #000;
 }
 
+h1 {
+	font-size: $font1;
+}
+
+h2 {
+	font-size: $font2;
+}
+
+h3 {
+	font-size: $font3;
+}
+
+h4 {
+	font-size: $font4;
+}
+
+h5 {
+	font-size: $font5;
+}
+
+h6 {
+	font-size: $font6;
+}
+
 ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
     color: $main_hover;
 }
@@ -34,7 +58,7 @@ select {
 .circle_button {
 	right: $add_offset;
 	bottom: $add_offset;
-	position: fixed;
+	position: absolute;
 	z-index: 1;
 
 	font-size: $font1 * 2 !important;
@@ -44,6 +68,12 @@ select {
 }
 
 // Add
+#add {
+	right: $add_offset;
+	bottom: $add_offset;
+	position: fixed;
+}
+
 #add_wrap {
 	display: none;
 	height: 100%;
@@ -229,12 +259,27 @@ nav div:hover {
 #msg_info {
 	width: 100%;
 	height: 100%;
-	left: 100%;
-	position: absolute;
+	position: fixed;
+	z-index: 2;
+	display: none;
 
 	color: $main_accent;
 
 	transition: all 0.3s ease-out 0s;
+}
+
+#msg_info > div {
+	overflow-y: scroll;
+	height: 85%;
+	width: 85%;
+	top: 50%;
+  transform: translateY(-50%);
+	position: relative;
+	margin: auto;
+	padding: $add_form_padding;
+
+	background: $main;
+	box-shadow: 0 0 10px $add_base;
 }
 
 #msg_info_wrap {
@@ -242,7 +287,9 @@ nav div:hover {
 }
 
 #msg_info_return {
-	display: none;
+	top: $add_exit_offset;
+	right: $add_exit_offset;
+	position: absolute;
 }
 
 // Comment
@@ -324,4 +371,88 @@ nav div:hover {
 
 .select2-search__field {
 	color: #main_accent !important;
+}
+
+@media only screen and ($tablet) {
+	h1 {
+		font-size: $font1 * $tablet_scale;
+	}
+	h2 {
+		font-size: $font2 * $tablet_scale;
+	}
+	h3 {
+		font-size: $font3 * $tablet_scale;
+	}
+	h4 {
+		font-size: $font4 * $tablet_scale;
+	}
+	h5 {
+		font-size: $font5 * $tablet_scale;
+	}
+	h6 {
+		font-size: $font6 * $tablet_scale;
+	}
+
+	#add_wrap > div {
+		min-height: 600px * $tablet_scale;
+		padding: $add_form_padding * $tablet_scale;
+	}
+
+	.circle_button {
+		right: $add_offset * $tablet_scale;
+		bottom: $add_offset * $tablet_scale;
+
+		font-size: $font1 * 2 * $tablet_scale !important;
+	}
+
+	#main ul li {
+		height: $msg_height * $tablet_scale;
+		padding: $msg_padding * $tablet_scale;
+	}
+
+	#msg_info_wrap {
+		padding: $msg_info_padding * $tablet_scale;
+	}
+}
+
+@media only screen and ($mobile) {
+	h1 {
+		font-size: $font1 * $mobile_scale;
+	}
+	h2 {
+		font-size: $font2 * $mobile_scale;
+	}
+	h3 {
+		font-size: $font3 * $mobile_scale;
+	}
+	h4 {
+		font-size: $font4 * $mobile_scale;
+	}
+	h5 {
+		font-size: $font5 * $mobile_scale;
+	}
+	h6 {
+		font-size: $font6 * $mobile_scale;
+	}
+
+	#add_wrap > div {
+		min-height: 600px * $mobile_scale;
+		padding: $add_form_padding * $mobile_scale;
+	}
+
+	.circle_button {
+		right: $add_offset * $mobile_scale;
+		bottom: $add_offset * $mobile_scale;
+
+		font-size: $font1 * 2 * $mobile_scale !important;
+	}
+
+	#main ul li {
+		height: $msg_height * $mobile_scale;
+		padding: $msg_padding * $mobile_scale;
+	}
+
+	#msg_info_wrap {
+		padding: $msg_info_padding * $mobile_scale;
+	}
 }
