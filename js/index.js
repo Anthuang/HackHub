@@ -220,7 +220,7 @@ window.onload = function() {
         commentHTML.innerHTML += "<li><h3>" + snapshot.child("comment").val() + "</h3></li>";
       });
 		}, false);
-		new_msg.innerHTML = "<h1>" + title + "</h1>\n<h3>" + text + "</h3>\n<h4>Tags: " + tags_string + "<button onclick='remove_post(\"" + snap.key + "\")' value='" + snap.key + "' class='remove_post'><i class='fa fa-times' aria-hidden='true'></i></button>";
+		new_msg.innerHTML = "<h1>" + title + "</h1>\n<h3>" + text + "</h3>\n<h4>Tags: " + tags_string + "</h4><button onclick='remove_post(\"" + snap.key + "\")' value='" + snap.key + "' class='remove_post'><i class='fa fa-times' aria-hidden='true'></i></button>";
 		document.getElementById("post").insertBefore(new_msg, document.getElementById("post").firstChild);
 
 				/********************************************************/
