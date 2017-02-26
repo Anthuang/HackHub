@@ -1,19 +1,23 @@
 function clearField(input) {
-  input.value = "";
+	if (input) {
+	  input.value = "";
+	}
 };
 
 function remove_post(key) {
-	var firebase_ref = firebase.database().ref().child("Posts").child(key);
-  firebase_ref.child("comments").once('value').then(function(snapshot) {
-    // console.log(snapshot.val());
-    for (var i in snapshot.val()) {
-      firebase.database().ref().child("Comments").child(i).remove();
-    }
-  });
-	firebase_ref.remove();
-  // var firebase_comments = firebase.database().ref().child("Comments");
-	// how to remove the html depends on whether we want it to refresh or not
-	window.location.replace("main.html");
+	if (confirm("Are you sure?")) {
+		var firebase_ref = firebase.database().ref().child("Posts").child(key);
+	  firebase_ref.child("comments").once('value').then(function(snapshot) {
+	    // console.log(snapshot.val());
+	    for (var i in snapshot.val()) {
+	      firebase.database().ref().child("Comments").child(i).remove();
+	    }
+	  });
+		firebase_ref.remove();
+	  // var firebase_comments = firebase.database().ref().child("Comments");
+		// how to remove the html depends on whether we want it to refresh or not
+		window.location.replace("main.html");
+	}
 };
 
 window.onload = function() {
@@ -217,7 +221,16 @@ window.onload = function() {
         });
 			}, false);
       if (user == curr_user) {
-        new_msg.innerHTML = "<h1>" + title + "</h1>\n<h3>" + text + "</h3>\n<h4>Tags: " + tags_string + "</h4><button onclick='remove_post(\"" + snap.key + "\")' value='" + snap.key + "' class='remove_post'><i class='fa fa-times' aria-hidden='true'></i></button>";
+        new_msg.innerHTML = "<h1>" + title + "</h1>\n<h3>" + text + "</h3>\n<h4>Tags: " + tags_string + "</h4>";
+
+        var but = document.createElement("button");
+        but.addEventListener('click', function(e) {
+        	remove_post(snap.key);
+        	e.stopPropagation();
+        }, false);
+        but.className += "remove_post";
+        but.innerHTML = "<i class='fa fa-times' aria-hidden='true'></i>";
+        new_msg.appendChild(but);
       } else {
         new_msg.innerHTML = "<h1>" + title + "</h1>\n<h3>" + text + "</h3>\n<h4>Tags: " + tags_string + "</h4>";
       }
@@ -240,7 +253,16 @@ window.onload = function() {
       });
 		}, false);
     if (user == curr_user) {
-      new_msg.innerHTML = "<h1>" + title + "</h1>\n<h3>" + text + "</h3>\n<h4>Tags: " + tags_string + "</h4><button onclick='remove_post(\"" + snap.key + "\")' value='" + snap.key + "' class='remove_post'><i class='fa fa-times' aria-hidden='true'></i></button>";
+      new_msg.innerHTML = "<h1>" + title + "</h1>\n<h3>" + text + "</h3>\n<h4>Tags: " + tags_string + "</h4>";
+
+        var but = document.createElement("button");
+        but.addEventListener('click', function(e) {
+        	remove_post(snap.key);
+        	e.stopPropagation();
+        }, false);
+        but.className += "remove_post";
+        but.innerHTML = "<i class='fa fa-times' aria-hidden='true'></i>";
+        new_msg.appendChild(but);
     } else {
       new_msg.innerHTML = "<h1>" + title + "</h1>\n<h3>" + text + "</h3>\n<h4>Tags: " + tags_string + "</h4>";
     }
@@ -277,7 +299,16 @@ window.onload = function() {
       });
     }, false);
     // console.log(snapshot.key);
-    user_li.innerHTML = "<h1>" + snapshot.child("title").val() + "</h1>\n<h3>" + snapshot.child("text").val() + "</h3>\n<h4>Tags: " + tags_string + "</h4><button onclick='remove_post(\"" + snapshot.key + "\")' value='" + snapshot.key + "' class='remove_post'><i class='fa fa-times' aria-hidden='true'></i></button>";
+    new_msg.innerHTML = "<h1>" + title + "</h1>\n<h3>" + text + "</h3>\n<h4>Tags: " + tags_string + "</h4>";
+
+        var but = document.createElement("button");
+        but.addEventListener('click', function(e) {
+        	remove_post(snap.key);
+        	e.stopPropagation();
+        }, false);
+        but.className += "remove_post";
+        but.innerHTML = "<i class='fa fa-times' aria-hidden='true'></i>";
+        new_msg.appendChild(but);
     document.getElementById("user").insertBefore(user_li, document.getElementById("user").firstChild);
   });
 
