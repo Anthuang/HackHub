@@ -65,3 +65,6 @@ We will compile a list of known issues here as they come up.
 
 ## License
 HackHub is released under the [MIT License](LICENSE).
+
+## Contact
+If you have any more questions, email me at antehuang@gmail.com
