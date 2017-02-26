@@ -28,10 +28,17 @@ compass watch
 Now your changes will cause Compass to compile your SASS directory on save.
 
 ## Contributors
-Due to the short nature of hackathons and too much junk food, our quality of the code may be lacking in certain areas. We will try our best to maintain HackHub, so contributions are very welcome. We welcome contributions in any form, but value bug fixes the most.
+Due to the short nature of hackathons and too much junk food, our quality of the code may be lacking in certain areas. We will try our best to maintain HackHub, so contributions are very welcome. We welcome contributions in any form, but value bug fixes the most. See **Known Issues** and **Possible Extensions** for more ideas.
 
 ## Known Issues
-* Our remove post button causes the page to change, even though it should only remove an element. We know that this is because the remove post button is nested within the messages, however we did not have a time to come up with a good solution.
+* Our remove post button causes the page to pop up, even though it should only remove an element. We know that this is because the remove post button is nested within the messages, however we did not have a time to come up with a good solution.
+
+## Possible Extensions
+* Maps could be included to make meetings easier to locate.
+* Filter options for the user to re-order messages on the home screen.
+* Pinned notifications that act as a constant reminder.
+* Queue of hackers waiting for a certain mentor, to make it easier for mentors to find who to help next.
+* Efficiency could be a problem if the hackathon is large-scaled.
 
 ## License
 HackHub is released under the [MIT License](LICENSE).

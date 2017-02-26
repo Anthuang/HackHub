@@ -13,7 +13,7 @@ function remove_post(key) {
 	firebase_ref.remove();
   // var firebase_comments = firebase.database().ref().child("Comments");
 	// how to remove the html depends on whether we want it to refresh or not
-	window.location.replace("index.html");
+	window.location.replace("main.html");
 };
 
 window.onload = function() {
@@ -227,6 +227,7 @@ window.onload = function() {
       });
 		}, false);
 		new_msg.innerHTML = "<h1>" + title + "</h1>\n<h3>" + text + "</h3>\n<h4>Tags: " + tags_string + "<button onclick='remove_post(\"" + snap.key + "\")' value='" + snap.key + "' class='remove_post'><i class='fa fa-times' aria-hidden='true'></i></button>";
+<<<<<<< HEAD
 		document.getElementById("post").insertBefore(new_msg, document.getElementById("post").firstChild);
 
 				/********************************************************/
@@ -251,10 +252,15 @@ window.onload = function() {
 			document.getElementById("user").insertBefore(user_li, document.getElementById("user").firstChild);
 		});
 		/***********************************************************/
+=======
+    new_msg.id = snap.key;
+    document.getElementById("post").insertBefore(new_msg, document.getElementById("post").firstChild);
+>>>>>>> 29375ca746b2d419c65b9e25f1dd2e54e08371d5
 	});
 
-
-
+  firebase_ref.child("Posts").on('child_removed', snap => {
+    $("#" + snap.key).remove();
+  });
 
 	var logout = document.getElementById("logout");
 	logout.addEventListener('click', e => {
@@ -273,4 +279,3 @@ window.onload = function() {
 	};
 
 }
-
