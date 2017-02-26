@@ -379,8 +379,16 @@ nav div:hover {
 	background: $announce_back;
 }
 
+.announce_li:hover {
+	background: $announce_back_hover !important;
+}
+
 .meeting_li {
 	background: $meeting_back;
+}
+
+.meeting_li:hover {
+	background: $meeting_back_hover !important;
 }
 
 @media only screen and ($tablet) {
