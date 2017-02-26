@@ -36,5 +36,10 @@ signup.addEventListener('click', e => {
         mentor: mentor_status,
         name: name_in
     });
-    window.location.replace("index.html");
+    if (mentor_status) {
+      firebase.database().ref().child("Tags").push().set({
+          company: name_in,
+      });
+    }
+    window.location.replace("main.html");
 });

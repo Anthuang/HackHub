@@ -1,86 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset=utf-8 />
-	<!-- jQuery -->
-	<script src="js/jquery-3.1.1.min.js"></script>
-
-	<!-- Firebase and JS files-->
-	<script src="https://www.gstatic.com/firebasejs/3.6.10/firebase.js"></script>
-	<script src="js/firebase_init.js"></script>
-	<script type='text/javascript' src='js/index.js'></script>
-
-
-	<!-- CSS files -->
+  <meta charset=utf-8 />
 	<link rel="stylesheet" type="text/css" href="css/index.css">
-	<link rel="stylesheet" href="css/font-awesome.min.css">
-
-	<!-- Fonts -->
-	<link href="https://fonts.googleapis.com/css?family=Open+Sans|Raleway" rel="stylesheet">
-
-	<!--select2-->
-	<script src="select2-4.0.3/dist/js/select2.min.js"></script>
-	<link rel="stylesheet" href="select2-4.0.3/dist/css/select2.min.css">
+	<script type="text/javascript" src="https://ajax.microsoft.com/ajax/jQuery/jquery-1.4.2.min.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/3.6.10/firebase.js"></script>
+  <script src="js/firebase_init.js"></script>
 </head>
 <body>
-	<!-- Detailed message info -->
-	<div id="msg_info">
-		<div id="msg_info_wrap">
-			<h1 id="msg_info_title">Loading...</h1>
-			<h3 id="msg_info_text">Loading...</h3>
-		</div>
-		<input type="hidden" id="post_id">
-		<ul id="comment"></ul>
-		<textarea id="comment_text" placeholder="Comment"></textarea>
-		<button id="comment_submit">SUBMIT</button>
-	</div>
-	
-	<!-- Return icon -->
-	<i id="msg_info_return" class="fa fa-reply circle_button" aria-hidden="true"></i>
-
-	<!-- Adding new messages -->
-	<div id="add_wrap">
-		<div>
-		  <!-- Essentially a form -->
-			<label for="add_title">Title</label>
-			<input id="add_title" type="text"/>
-			<label for="add_text">Content</label>
-			<textarea id="add_text"></textarea>
-			<select id="selectBox" multiple="multiple"></select>
-			<label for="add_select">Message type</label>
-			<select id="add_select">
-			  <option value="post">post</option>
-			  <option value="announcement">announcement</option>
-			  <option value="meeting">meeting</option>
-			</select>
-			<button id="add_submit">SUBMIT</button>
-			<i id="add_exit" class="fa fa-times" aria-hidden="true"></i>
-		</div>
-	</div>
-
-	<!-- Wraps main content -->
-	<div id="outer_wrap">
-		<!-- Put the plus button in here to get the blur on it-->
-		<i id="add" class="fa fa-plus-circle circle_button" aria-hidden="true"></i>
-		
-		<!-- Navigation -->
-		<nav>
-			<div value="0" class="nav_el nav_active"><h3>Home</h3></div>
-			<div value="1" class="nav_el"><h3>Announcements</h3></div>
-			<div value="2" class="nav_el"><h3>Meetings</h3></div>
-			<div value="3" class="nav_el"><h3>User</h3></div>
-			<!-- <div id="search"><h3>Search</h3></div> -->
-			<div value="3" class="nav_el" id="logout"><h3>Logout</h3></div>
-		</nav>
-
-		<!-- Main panel -->
-		<div id="main">
-			<ul id="post"></ul>
-			<ul id="announcement"></ul>
-			<ul id="meeting"></ul>
-			<ul id="user"></ul>
-		</div>
-	</div>
-	<script type='text/javascript' src="js/logout.js"></script>
+  <h1 id="logo">HackHub</h1>
+  <div id="login_wrap">
+    <button class="log_button"><a href="login.html">log in</a></button>
+    <button class="log_button"><a href="signup.html">sign up</a></button>
+  </div>
 </body>
 </html>

@@ -1,0 +1,77 @@
+a {
+	color: $main_accent;
+}
+
+#logo {
+	display: table;
+	margin: auto;
+	margin-bottom: $comment_spacing;
+	padding: $logo_padding 0;
+
+	font-size: $font1 * 3;
+
+	color: $main_accent;
+}
+
+.user_input {
+	height: $msg_height / 2;
+	width: 30%;
+	display: block;
+	margin: auto;
+	margin-bottom: $comment_spacing;
+	padding: 0 $comment_padding;
+
+	font-size: $font2;
+	font-family: $main_font;
+
+	color: $main_accent;
+	border: 3px solid $main_accent;
+	background: none;
+	outline: none;
+}
+
+.log_button {
+	height: $msg_height / 2;
+	width: 30%;
+	display: block;
+	margin: auto;
+	margin-bottom: $comment_spacing;
+	padding: 0 $comment_padding;
+
+	font-size: $font2;
+	font-family: $main_font;
+	cursor: pointer;
+
+	color: $main_accent;
+	border: none;
+	border-top: 3px solid $main_accent;
+	border-bottom: 3px solid $main_accent;
+	// background: $main_accent;
+	background: none;
+}
+
+.log_button:hover {
+	background: $nav_bar;
+}
+
+#mentor_wrap {
+	margin: auto;
+	margin-bottom: $comment_spacing;
+	display: table;
+
+	font-size: $font2;
+	font-family: $main_font;
+
+	color: $main_accent;
+}
+
+#mentor_wrap h3 {
+	display: inline-block;
+	margin-right: 10px;
+}
+
+#mentor_wrap input {
+	height: $check_box_size;
+	width: $check_box_size;
+	vertical-align: bottom;
+}

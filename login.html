@@ -1,18 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset=utf-8 />
-	<link rel="stylesheet" type="text/css" href="css/index.css">
-	<script type="text/javascript" src="https://ajax.microsoft.com/ajax/jQuery/jquery-1.4.2.min.js"></script>
-	<script src="https://www.gstatic.com/firebasejs/3.6.10/firebase.js"></script>
-    <script src="js/firebase_init.js"></script>
+  <meta charset=utf-8 />
+  <link rel="stylesheet" type="text/css" href="css/index.css">
+  <script type="text/javascript" src="https://ajax.microsoft.com/ajax/jQuery/jquery-1.4.2.min.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/3.6.10/firebase.js"></script>
+  <script src="js/firebase_init.js"></script>
 </head>
 <body>
-    <h1 id = "message">My buddy! U arent logged in! get ur butt in herre boi</h1>
-    <input type="text" id="email" />
-    <input type="password" id="password" />
-    <button id = "login">log in</button>
-    <script src="js/login.js"></script>
+  <h1 id="logo">Log In</h1>
+  <div id="login_wrap">
+    <input class="user_input" type="text" id="email" placeholder="Email" />
+    <input class="user_input" type="password" id="password" placeholder="Password" />
+    <button class="log_button">log in</button>
+  </div>
+  <script src="js/login.js"></script>
 </body>
-
 </html>

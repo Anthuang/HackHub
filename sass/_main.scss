@@ -2,12 +2,6 @@
 // This is CSS for the main page
 //
 
-// @media only screen and ($mobile) {
-//   body {
-//     background-color: $nav_bar_accent;
-//   }
-// }
-
 html {
 	overflow-x: hidden;
 
@@ -142,7 +136,7 @@ nav {
 	font-family: $main_font;
 }
 
-nav > div {
+nav div {
 	height: 100%;
 	display: table-cell;
 	vertical-align: middle;
@@ -154,9 +148,23 @@ nav > div {
 	background: $nav_bar;
 }
 
-nav > div:hover {
+nav div:hover {
 	color: $main_accent;
 	background: $nav_hover;
+}
+
+.nav_icon {
+	display: none !important;
+}
+
+@media only screen and ($tablet) {
+	.nav_text {
+		display: none;
+	}
+
+	.nav_icon {
+		display: block !important;
+	}
 }
 
 .nav_active {
@@ -193,9 +201,8 @@ nav > div:hover {
 
 .remove_post {
 	height: 100%;
-	width: 5%;
 	top: 0;
-	right: 0;
+	right: 2%;
 	position: absolute;
 
 	font-size: $font3;

@@ -1,28 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset=utf-8 />
-	<link rel="stylesheet" type="text/css" href="css/index.css">
-	<script type="text/javascript" src="https://ajax.microsoft.com/ajax/jQuery/jquery-1.4.2.min.js"></script>
-	<script src="https://www.gstatic.com/firebasejs/3.6.10/firebase.js"></script>
-    <script src="js/firebase_init.js"></script>
+  <meta charset=utf-8 />
+  <link rel="stylesheet" type="text/css" href="css/index.css">
+  <script type="text/javascript" src="https://ajax.microsoft.com/ajax/jQuery/jquery-1.4.2.min.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/3.6.10/firebase.js"></script>
+  <script src="js/firebase_init.js"></script>
 </head>
 <body>
-    <h1 id = "message">Sign up here!</h1>
-    <h2>Email</h2>
-    <input type="text" id="email" />
-    <br>
-    <h2>Password</h2>
-    <input type="password" id="password" />
-    <br>
-    <h2>Full Name</h2>
-    <input type = "text" id = "name" />
-    <br>
-    <p1>Are you a mentor</p1>
-    <input type="checkbox" id="mentor">
-    <br>
-    <button id = "signup">make dat acc</button>
-    <script src="js/signup.js"></script>
+  <h1 id="logo">Sign Up</h1>
+  <input class="user_input" type="text" id="email" placeholder="Email" />
+  <input class="user_input" type="password" id="password" placeholder="Password" />
+  <input class="user_input" type = "text" id = "name" placeholder="Full Name" />
+  <div id="mentor_wrap"><h3>Are you a mentor?</h3><input type="checkbox" id="mentor"></div>
+  <button class="log_button">sign up</button>
+  <script src="js/signup.js"></script>
 </body>
-
 </html>

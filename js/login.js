@@ -20,7 +20,7 @@ login.addEventListener('click', e =>{
         console.log("account logged in");
         document.getElementById("email").value = "";
         document.getElementById("password").value = "";
-        window.location.replace("index.html");
+        window.location.replace("main.html");
     })
     .catch(function(error) {
         alert(error.message);

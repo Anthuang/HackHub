@@ -4,20 +4,31 @@ function clearField(input) {
 
 function remove_post(key) {
 	var firebase_ref = firebase.database().ref().child("Posts").child(key);
+  firebase_ref.child("comments").once('value').then(function(snapshot) {
+    // console.log(snapshot.val());
+    for (var i in snapshot.val()) {
+      firebase.database().ref().child("Comments").child(i).remove();
+    }
+  });
 	firebase_ref.remove();
+  // var firebase_comments = firebase.database().ref().child("Comments");
 	// how to remove the html depends on whether we want it to refresh or not
 	window.location.replace("index.html");
 };
 
 window.onload = function() {
 
-	var data = [{ id: 0, text: 'Web' }, { id: 1, text: 'iOS' }, { id: 2, text: 'Android' }, { id: 3, text: 'Hardware' }, { id: 4, text: 'Others' }];
-	$("#selectBox").select2({
-		width: '100%',
-		data: data,
-		placeholder: "Tags",
-		allowclear: true,
-	});
+	var data = [];
+
+  firebase.database().ref("Tags").on("child_added", snap => {
+    data.push({ id: data.length, text: snap.child("company").val() });
+    $("#selectBox").select2({
+  		width: '100%',
+  		data: data,
+  		placeholder: "Tags",
+  		allowclear: true,
+  	});
+  });
 
 	/*
 	 * Switching tabs
@@ -100,7 +111,7 @@ window.onload = function() {
   comment_submit.onclick = function() {
     var add_comment = document.getElementById("comment_text").value;
     var post_key = document.getElementById("post_id").value;
-    var new_key = firebase_ref.child("Posts").child(post_key).child("comments").push("random_value").getKey();
+    var new_key = firebase_ref.child("Posts").child(post_key).child("comments").push(true).getKey();
     firebase_ref.child("Comments").child(new_key).set({
       post: post_key,
       comment: add_comment
