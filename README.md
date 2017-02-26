@@ -1,7 +1,7 @@
 # HackHub
 This project was created during HackIllinois 2017, by a group of three including myself, [Thomas Huang](https://github.com/thomasehuang), and [Anton Yang](https://github.com/theunderpaidone).
 
-HackHub is a open source project that specifically targets hackathons. HackHub aims to ease the burdens of mentors and company representatives at hackathons, by providing a platform online to facilitate communication between hackers and mentors (we will include company representatives in this category) simply and elegantly. Besides forum style Q&A, HackHub also provides functionality such as making announcements and arranging meetings. We included a prototype demonstrating the basic functionalities of our product. We built this platform using web technologies, namely HTML, CSS, and JavaScript. We are using Firebase as a backend, because of its simplicity and real-time updates. You can find the prototype [here](imthomashuang.com).
+HackHub is a open source project that specifically targets hackathons. HackHub aims to ease the burdens of mentors and company representatives at hackathons, by providing a platform online to facilitate communication between hackers and mentors (we will include company representatives in this category) simply and elegantly. Besides forum style Q&A, HackHub also provides functionality such as making announcements and arranging meetings. We included a prototype demonstrating the basic functionalities of our product. We built this platform using web technologies, namely HTML, CSS, and JavaScript. We are using Firebase as a backend, because of its simplicity and real-time updates. You can find the prototype [here](http://www.imthomashuang.com).
 
 We understand that hackathons have different requirements and style choices, so we have made the code base very easy to extend. We highly encourage hackathons to not only fork this repo and tweak our code for their own needs, but also to help extend the project for future hackathons. We will now go into details on HackHub.
 
@@ -15,7 +15,11 @@ Moving on to the messages. Every message is added by some user, either a hacker 
 Clicking on the messages will bring up a more detailed page for the specific message. This will also bring up a comment section, which is where mentors would help hackers. This allows mentors to help hackers over long distances.
 
 ## Tweaking HackHub
-Tweaking HackHub is simple. Since our CSS is compiled with SASS using Compass, almost all of the values used are stored in variables in the \_globals.scss file. Thus, tweaking HackHub is as simple as changing the variables in the file.
+Tweaking HackHub is simple. Since our CSS is compiled with SASS using Compass, almost all of the values used are stored in variables in the \_globals.scss file. Tweaking HackHub is as simple as changing the variables in the file. For example, to change the navigation bar color, change the $nav_bar variable to something like:
+
+```
+$nav_bar: #ff9900;
+```
 
 To compile SASS, install [Compass](http://compass-style.org/install/) first, and then in the root directory of this project run:
 ```
