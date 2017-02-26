@@ -76,36 +76,41 @@ window.onload = function() {
 	}
 		
 		firebase.database().ref("Posts").orderByChild("user").equalTo(curr_user).on("child_added", function(snapshot) {
-    console.log(snapshot.val());
-    var tags = snapshot.child("tags").val();
-		var tags_string = "";
-		for (var i = 0; i < snapshot.child("tags").numChildren() - 1; i++) {
-			tags_string += data[snapshot.child("tags").child(i).val()]['text'] + ", ";
-		}
-		if (snapshot.child("tags").numChildren() > 0) {
-			tags_string += data[snapshot.child("tags").child(snapshot.child("tags").numChildren() - 1).val()]['text'];
-		}
-    // console.log(snapshot.val());
-    var commentHTML = document.getElementById("comment");
-    var commentTA = document.getElementById("comment_text");
-    var user_li = document.createElement("li");
-    user_li.addEventListener('click', function(e) {
-      commentHTML.innerHTML = "";
-      commentTA.value = "";
-      window.scrollTo(0, 0);
-      document.getElementById("msg_info_title").innerHTML = snapshot.child("title").val();
-      document.getElementById("msg_info_text").innerHTML = snapshot.child("text").val();
-      document.getElementById("msg_info").style.display = "block";
-      outer_wrap.style.webkitFilter = "blur(3px)";
-      document.getElementById("post_id").value = snapshot.key;
-      //
-      firebase.database().ref("Comments").off();
-      firebase.database().ref("Comments").orderByChild("post").equalTo(snapshot.key).on("child_added", function(snapshot) {
-        commentHTML.innerHTML += "<li><h3>" + snapshot.child("comment").val() + "</h3></li>";
-      });
-    }, false);
+			console.log(snapshot.val());
+			var tags = snapshot.child("tags").val();
+			var tags_string = "";
+			for (var i = 0; i < snapshot.child("tags").numChildren() - 1; i++) {
+				tags_string += data[snapshot.child("tags").child(i).val()]['text'] + ", ";
+			}
+			if (snapshot.child("tags").numChildren() > 0) {
+				tags_string += data[snapshot.child("tags").child(snapshot.child("tags").numChildren() - 1).val()]['text'];
+			}
+			// console.log(snapshot.val());
+			var commentHTML = document.getElementById("comment");
+			var commentTA = document.getElementById("comment_text");
+			var user_li = document.createElement("li");
+			var title = snapshot.child("title").val();
+			var text = snapshot.child("text").val();
+			var select = snapshot.child("select").val();
+			var tags = snapshot.child("tags").val();
+			var user = snapshot.child("user").val();
+			user_li.addEventListener('click', function(e) {
+				commentHTML.innerHTML = "";
+				commentTA.value = "";
+				window.scrollTo(0, 0);
+				document.getElementById("msg_info_title").innerHTML = snapshot.child("title").val();
+				document.getElementById("msg_info_text").innerHTML = snapshot.child("text").val();
+				document.getElementById("msg_info").style.display = "block";
+				outer_wrap.style.webkitFilter = "blur(3px)";
+				document.getElementById("post_id").value = snapshot.key;
+				//
+				firebase.database().ref("Comments").off();
+				firebase.database().ref("Comments").orderByChild("post").equalTo(snapshot.key).on("child_added", function(snapshot) {
+					commentHTML.innerHTML += "<li><h3>" + snapshot.child("comment").val() + "</h3></li>";
+				});
+			}, false);
     // console.log(snapshot.key);
-    new_msg.innerHTML = "<h1>" + title + "</h1>\n<h3>" + text + "</h3>\n<h4>Tags: " + tags_string + "</h4>";
+    user_li.innerHTML = "<h1>" + title + "</h1>\n<h3>" + text + "</h3>\n<h4>Tags: " + tags_string + "</h4>";
     var but = document.createElement("button");
     but.addEventListener('click', function(e) {
     	remove_post(snap.key);
@@ -113,7 +118,7 @@ window.onload = function() {
     }, false);
     but.className += "remove_post";
     but.innerHTML = "<i class='fa fa-times' aria-hidden='true'></i>";
-    new_msg.appendChild(but);
+    user_li.appendChild(but);
     document.getElementById("user").insertBefore(user_li, document.getElementById("user").firstChild);
   });
 		
@@ -159,10 +164,10 @@ window.onload = function() {
 				var current_user_company;
 				firebase.database().ref("Users/" + curr_user + "/company").once("value", function(snap) {
 						current_user_company = snap.val();
-						checkRest(snapshot);
+						checkRest(snapshot, current_user_company);
 					});
 			});
-				function checkRest(snapshot) {
+				function checkRest(snapshot, current_user_company) {
 					var tags = snapshot.child("tags").val();
 					var tags_string = "";
 					var is_tagged = false;
