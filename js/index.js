@@ -222,7 +222,6 @@ window.onload = function() {
 			}, false);
       if (user == curr_user) {
         new_msg.innerHTML = "<h1>" + title + "</h1>\n<h3>" + text + "</h3>\n<h4>Tags: " + tags_string + "</h4>";
-
         var but = document.createElement("button");
         but.addEventListener('click', function(e) {
         	remove_post(snap.key);
@@ -254,15 +253,14 @@ window.onload = function() {
 		}, false);
     if (user == curr_user) {
       new_msg.innerHTML = "<h1>" + title + "</h1>\n<h3>" + text + "</h3>\n<h4>Tags: " + tags_string + "</h4>";
-
-        var but = document.createElement("button");
-        but.addEventListener('click', function(e) {
-        	remove_post(snap.key);
-        	e.stopPropagation();
-        }, false);
-        but.className += "remove_post";
-        but.innerHTML = "<i class='fa fa-times' aria-hidden='true'></i>";
-        new_msg.appendChild(but);
+      var but = document.createElement("button");
+      but.addEventListener('click', function(e) {
+      	remove_post(snap.key);
+      	e.stopPropagation();
+      }, false);
+      but.className += "remove_post";
+      but.innerHTML = "<i class='fa fa-times' aria-hidden='true'></i>";
+      new_msg.appendChild(but);
     } else {
       new_msg.innerHTML = "<h1>" + title + "</h1>\n<h3>" + text + "</h3>\n<h4>Tags: " + tags_string + "</h4>";
     }
@@ -300,15 +298,14 @@ window.onload = function() {
     }, false);
     // console.log(snapshot.key);
     new_msg.innerHTML = "<h1>" + title + "</h1>\n<h3>" + text + "</h3>\n<h4>Tags: " + tags_string + "</h4>";
-
-        var but = document.createElement("button");
-        but.addEventListener('click', function(e) {
-        	remove_post(snap.key);
-        	e.stopPropagation();
-        }, false);
-        but.className += "remove_post";
-        but.innerHTML = "<i class='fa fa-times' aria-hidden='true'></i>";
-        new_msg.appendChild(but);
+    var but = document.createElement("button");
+    but.addEventListener('click', function(e) {
+    	remove_post(snap.key);
+    	e.stopPropagation();
+    }, false);
+    but.className += "remove_post";
+    but.innerHTML = "<i class='fa fa-times' aria-hidden='true'></i>";
+    new_msg.appendChild(but);
     document.getElementById("user").insertBefore(user_li, document.getElementById("user").firstChild);
   });
 
