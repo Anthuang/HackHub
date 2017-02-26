@@ -53,16 +53,6 @@ Due to the short nature of hackathons and too much junk food, our quality of the
 
 See how to contribute [here](CONTRIBUTING.MD)
 
-### Known Issues
-We will compile a list of known issues in the issue tracker.
-
-### Possible Extensions
-* Maps could be included to make meetings easier to locate.
-* Filter options for the user to re-order messages on the home screen.
-* Pinned notifications that act as a constant reminder.
-* Queue of hackers waiting for a certain mentor, to make it easier for mentors to find who to help next.
-* Efficiency could be a problem if the hackathon is large-scaled.
-
 ## License
 HackHub is released under the [MIT License](LICENSE).
 
