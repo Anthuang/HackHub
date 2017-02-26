@@ -28,7 +28,7 @@ window.onload = function() {
 		if(user){
 			curr_user = user;
 		} else {
-			//window.location.replace("not_logged_in.html");
+			window.location.replace("login.html");
 		}
 	});
 	// console.log(curr_user);
@@ -85,7 +85,7 @@ window.onload = function() {
 	    text: add_text,
 	    select: add_select,
 			tags: add_tags,
-			// user: curr_user.uid,
+			user: curr_user.uid,
 			comments: "",
 	  });
 
