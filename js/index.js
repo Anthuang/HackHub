@@ -13,7 +13,7 @@ function remove_post(key) {
 	firebase_ref.remove();
   // var firebase_comments = firebase.database().ref().child("Comments");
 	// how to remove the html depends on whether we want it to refresh or not
-	window.location.replace("index.html");
+	window.location.replace("main.html");
 };
 
 window.onload = function() {
