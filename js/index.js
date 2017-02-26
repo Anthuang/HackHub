@@ -125,16 +125,16 @@ window.onload = function() {
   //   }
 	// });
 
-  function update_comments(snap) {
-    var comments = snap.child("comments").val();
-    var commentHTML = document.getElementById("comment");
-    commentHTML.innerHTML = "";
-    for (var key in comments) {
-      firebase_ref.child("Comments").child(key).child("comment").once('value').then(function(snapshot) {
-        commentHTML.innerHTML += "<li><h3>" + snapshot.val() + "</h3></li>";
-      });
-    }
-  }
+  // function update_comments(snap) {
+  //   var comments = snap.child("comments").val();
+  //   var commentHTML = document.getElementById("comment");
+  //   commentHTML.innerHTML = "";
+  //   for (var key in comments) {
+  //     firebase_ref.child("Comments").child(key).child("comment").once('value').then(function(snapshot) {
+  //       commentHTML.innerHTML += "<li><h3>" + snapshot.val() + "</h3></li>";
+  //     });
+  //   }
+  // }
 
 	// Triggers when a post is added
 	// Receive a snap which is one post
